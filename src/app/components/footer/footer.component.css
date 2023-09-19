@@ -23,7 +23,7 @@ footer .container img{
   width: 100px;
   margin: 15px;
 }
-@media (min-width: 720px){
+@media (min-width: 700px){
 
   footer .container{
     flex-direction: row;
