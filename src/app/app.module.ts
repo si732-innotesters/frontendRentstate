@@ -13,6 +13,7 @@ import { ListPostsComponent } from './components/list-posts/list-posts.component
 import { SeePostComponent } from './components/see-post/see-post.component';
 import { CommentsComponent } from './components/comments/comments.component';
 import {MatIconModule} from "@angular/material/icon";
+import { SeeProfileComponent } from './components/see-profile/see-profile.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {MatIconModule} from "@angular/material/icon";
     WelcomeComponent,
     ListPostsComponent,
     SeePostComponent,
-    CommentsComponent
+    CommentsComponent,
+    SeeProfileComponent
   ],
   imports: [
     BrowserModule,

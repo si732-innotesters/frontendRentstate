@@ -2,9 +2,6 @@
 .container{
   margin-top: 2rem;
 }
-.profile{
-
-}
 .user{
   display: flex;
   flex-direction: column;
