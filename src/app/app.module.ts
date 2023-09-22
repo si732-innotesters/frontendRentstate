@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RegisterComponent } from './components/register/register.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
     HeaderComponent,
     FooterComponent,
     RegisterComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
