@@ -72,9 +72,9 @@ form button {
 
 .actions{
   margin: 20px auto;
-  display: grid;
   width: 70%;
   max-width: 300px;
+  display: grid;
   grid-template-columns: repeat(2,1fr);
   gap: 1rem 1.5rem;
 }
