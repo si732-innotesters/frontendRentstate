@@ -1,0 +1,57 @@
+
+<div class="container">
+  <section class="profile">
+    <div class="user">
+      <div class="photoUser">
+        <label>Premium</label>
+      </div>
+      <p>⭐⭐⭐⭐⭐</p>
+    </div>
+
+    <form action="">
+      <div class="edit-info">
+        <div class="input-box">
+          <label>Name:</label>
+          <input type="text" class="input-info" placeholder="Name">
+        </div>
+        <div class="input-box">
+          <label>Last Name:</label>
+          <input type="text" class="input-info" placeholder="Last Name">
+        </div>
+        <div class="input-box">
+          <label>Age:</label>
+          <input type="number" class="input-info" placeholder="Age">
+        </div>
+        <div class="input-box"  style=" grid-column: span 3">
+          <label>Photo url:</label>
+          <input type="text" class="input-info" placeholder="url Photo">
+        </div>
+        <div class="input-box" style=" grid-column: span 2">
+          <label>Email:</label>
+          <input type="email" class="input-info" placeholder="Email">
+        </div>
+        <div class="input-box">
+          <label>Gender:</label>
+          <select class="input-info" placeholder="Gender">
+            <option *ngFor="let option of genderOptions">{{ option }}</option>
+          </select>
+        </div>
+        <div class="input-box" style=" grid-column: span 3">
+          <label>Description:</label>
+          <textarea class="input-info" placeholder="Description"></textarea>
+        </div>
+
+      </div>
+      <button type="submit">Save</button>
+
+    </form>
+  </section>
+
+  <section class="actions">
+    <button>Your Posts</button>
+    <button>Your Properties</button>
+    <button id="btnCancel">Cancel Subscription</button>
+    <button>Your Clients</button>
+    <button>Reservations</button>
+  </section>
+</div>
