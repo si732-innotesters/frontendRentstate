@@ -10,6 +10,9 @@ import { RegisterComponent } from './components/register/register.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { ListPostsComponent } from './components/list-posts/list-posts.component';
+import { SeePostComponent } from './components/see-post/see-post.component';
+import { CommentsComponent } from './components/comments/comments.component';
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -19,12 +22,15 @@ import { ListPostsComponent } from './components/list-posts/list-posts.component
     RegisterComponent,
     EditProfileComponent,
     WelcomeComponent,
-    ListPostsComponent
+    ListPostsComponent,
+    SeePostComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

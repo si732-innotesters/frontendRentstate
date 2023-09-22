@@ -1,0 +1,181 @@
+
+.container{
+  max-width: 1000px;
+  margin: auto;
+}
+
+.post{
+  margin: 50px auto;
+  width: 90%;
+}
+h2{
+  font-weight: bold;
+  text-align: center;
+}
+
+.imgPost{
+  width: 170px;
+  height: 170px;
+  margin: 10px auto;
+  background-image:url("https://www.lamudi.com.mx/journal/wp-content/uploads/2014/11/W47_Casa_Vs_Departamento_3-1024x692.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: start;
+}
+.imgPost span{
+  background: #67A1DB;
+  padding: 5px 15px;
+  border-radius: 3px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+}
+.name p{
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.name p:hover{
+  text-decoration: underline;
+  transform: scale(1.2);
+}
+
+.post-info{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 0.1rem 1rem;
+}
+.post-info p{
+  background: #064789;
+  padding: 20px;
+  color: white;
+  font-weight: 500;
+  cursor:default;
+  border-radius: 5px;
+}
+
+#description{
+  grid-column: span 2;
+}
+
+#address{
+  grid-column: span 3;
+  text-align: center;
+  padding: 8px;
+}
+
+.post-info button{
+  border: none;
+  padding: 8px 30px;
+
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  width: max-content;
+  margin: 10px auto 20px;
+}
+#price{
+  background: #064789;
+}
+#price:hover{
+  transform: scale(1);
+  cursor:default;
+}
+#reserve{
+  background: #67A1DB;
+}
+
+
+.comment-box {
+  width: 80%;
+  height: 250px;
+  margin: auto;
+}
+.comment-box label{
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.comment{
+  background: wheat;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+
+.write-comment {
+  background-color: #f5f5f5;
+  width: 80%;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 30px auto;
+  display: flex;
+  align-items: center;
+}
+
+.write-comment textarea {
+  flex-grow: 1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  resize: none;
+  height: 80px;
+}
+
+.write-comment button {
+  background-color: #5ab3d5;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.write-comment button:hover {
+  background-color: #0056b3;
+}
+
+.write-comment button mat-icon {
+  font-size: 24px;
+  vertical-align: middle;
+}
+
+
+@media (min-width: 750px){
+
+  .post-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  .post-info{
+    max-width: 600px;
+    margin: auto;
+  }
+
+
+  .section-comment{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 50px;
+  }
+  .comment-box{
+    width: 45%;
+  }
+  textarea{
+    height: 100%;
+  }
+  .write-comment{
+    width: 45%;
+  }
+}
