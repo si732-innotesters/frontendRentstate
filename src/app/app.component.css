@@ -1,4 +1,4 @@
-/*No tocar estos estilos*/
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -6,5 +6,5 @@
 }
 
 section {
-  flex-grow: 1;/* Permite que la sección ocupe el espacio restante vertical */
+  flex-grow: 1;
 }

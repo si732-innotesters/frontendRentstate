@@ -14,6 +14,8 @@ import { SeePostComponent } from './components/see-post/see-post.component';
 import { CommentsComponent } from './components/comments/comments.component';
 import {MatIconModule} from "@angular/material/icon";
 import { SeeProfileComponent } from './components/see-profile/see-profile.component';
+import { ChatsComponent } from './components/chats/chats.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -26,13 +28,15 @@ import { SeeProfileComponent } from './components/see-profile/see-profile.compon
     ListPostsComponent,
     SeePostComponent,
     CommentsComponent,
-    SeeProfileComponent
+    SeeProfileComponent,
+    ChatsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+      HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
