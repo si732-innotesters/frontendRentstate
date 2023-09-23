@@ -1,0 +1,52 @@
+mat-card{
+  background-color: #2271B3;
+  margin-left: 15rem;
+  margin-right: 15rem;
+}
+mat-card-title{
+  margin:2rem;
+  text-align: center;
+  color: #002C3E;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.new-button button{
+  background-color: #002C3E;
+  color: white;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 1.5rem;
+}
+
+
+mat-card-content{
+  background-color: #B7D5E5;
+  padding-top: 1rem;
+  margin: 1rem;
+}
+
+img{
+  width: 3rem;
+  margin-right: 1rem;
+}
+@media (max-width: 768px) {
+  mat-card {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  mat-card {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
