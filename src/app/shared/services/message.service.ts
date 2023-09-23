@@ -8,7 +8,8 @@ export class MessageService {
 
   constructor(private _httpCliet: HttpClient) { }
 
-  getChats(){
-    return this._httpCliet.get(`http://localhost:3000/chats`)
+  getChats(name:string){
+
+    return this._httpCliet.get("http://localhost:3000/"+name)
   }
 }

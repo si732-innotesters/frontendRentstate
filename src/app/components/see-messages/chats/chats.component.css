@@ -1,49 +1,27 @@
 
 .container{
-}
-
-.chats h2{
-  text-align: center;
-  font-size: 1.7rem;
-  font-weight: bold;
-  margin-top: 30px;
-}
-.chat-box{
-  display: flex;
-  width: 100%;
-  overflow-x:scroll ;
-}
-.chat-box button{
-  width: 300px;
-  white-space: nowrap;
-  margin: 10px 5px;
-  background: #67A1DB;
-  border: none;
-  border-radius: 20px;
-  padding: 8px 15px;
-  font-weight: bold;
-  color: white;
-}
-.chat-box button:hover{
-  transform: scale(1);
-  background: #69DB67;
-  color: #0056b3;
-}
-
-.messages {
   background: white;
   height: 500px;
   padding: 20px 10% 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+h3{
+  margin-bottom:  10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #3498db;
+  border-bottom: 1px solid #484A4C;
+  width: 100%;
 }
 .message-box{
   display: flex;
   flex-direction: column;
   height: 100%;
   overflow-y: scroll;
-
+  max-width: 600px;
 }
 .message-box::-webkit-scrollbar {
   width: 0.5em;
@@ -74,6 +52,7 @@
   align-items: center;
   background-color: #3498db;
   padding:  5px ;
+  width: 100%;
 }
 
 textarea {
@@ -100,41 +79,13 @@ mat-icon:active {
   transform: scale(0.7);
 }
 
-
 @media (min-width: 700px){
 
   .container{
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-  .chats{
-
-  }
-  .chat-box{
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    height: 500px;
-    margin-right: 20px;
-    overflow-y: scroll;
-  }
-  .chat-box::-webkit-scrollbar {
-    width: 0.5em;
-  }
-  .chat-box::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0);
-  }
-  .chat-box button{
-    max-width: 200px;
-  }
-
-  .messages{
     padding: 10px 5px 0;
   }
-  .message-box{
-      max-width: 600px;
-  }
-
 }

@@ -16,30 +16,12 @@
       <button>Isabella Martinez</button>
       <button>Christopher Jones</button>
       <button>Mia White</button>
-      <button>Daniel Perez</button>
-      <button>Emma Davis</button>
-      <button>Alexander Johnson</button>
-      <button>Sofia Garcia</button>
-      <button>Nicholas Robinson</button>
-      <button>Grace Martin</button>
-      <button>Ethan Lee</button>
-
 
     </div>
   </section>
 
-  <section class="messages">
-    <div class="message-box">
-      <p *ngFor="let chat of chats"
-      [ngClass]="(userLogedId==chat.authorId)?'content sent':'content received'">
-        {{chat.content}}
-      </p>
-    </div>
-
-    <div class="input-message">
-      <textarea></textarea>
-      <mat-icon>send</mat-icon>
-    </div>
+  <section class="message-section">
+    <app-chats></app-chats>
   </section>
 
 </div>

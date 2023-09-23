@@ -11,11 +11,12 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { ListPostsComponent } from './components/list-posts/list-posts.component';
 import { SeePostComponent } from './components/see-post/see-post.component';
-import { CommentsComponent } from './components/comments/comments.component';
+import { CommentsComponent} from "./components/see-post/comments/comments.component";
 import {MatIconModule} from "@angular/material/icon";
 import { SeeProfileComponent } from './components/see-profile/see-profile.component';
-import { ChatsComponent } from './components/chats/chats.component';
+import { ChatsComponent } from './components/see-messages/chats/chats.component';
 import {HttpClientModule} from "@angular/common/http";
+import { SeeMessagesComponent } from './components/see-messages/see-messages.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {HttpClientModule} from "@angular/common/http";
     SeePostComponent,
     CommentsComponent,
     SeeProfileComponent,
-    ChatsComponent
+    ChatsComponent,
+    SeeMessagesComponent
   ],
   imports: [
     BrowserModule,
