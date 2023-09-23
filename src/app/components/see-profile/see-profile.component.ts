@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class SeeProfileComponent {
 
+  sendMessage:boolean= false
+
+
+
+  changeSendMessage(){
+    this.sendMessage = !this.sendMessage
+  }
+
 }

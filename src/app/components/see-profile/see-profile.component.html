@@ -15,7 +15,7 @@
         "Material Icons" para el ícono del botón y de que tu HTML incluye la
         referencia adecuada a esta biblioteca.</p>
       <span></span>
-      <a id="send-message">Send Message <mat-icon>send</mat-icon></a>
+      <a id="send-message" (click)="changeSendMessage()">Send Message <mat-icon>send</mat-icon></a>
       <span></span>
     </div>
   </section>
@@ -27,3 +27,18 @@
   </section>
 
 </div>
+
+<section class="send-message" *ngIf="sendMessage">
+  <h2>Send Message</h2>
+  <div class="message-box">
+    <label>To: Arzon Lopez</label>
+    <div class="message">
+      <label>Write message:</label>
+      <textarea id="message"></textarea>
+    </div>
+    <div class="buttons">
+      <button class="send-button" (click)="changeSendMessage()"> <mat-icon>send</mat-icon> </button>
+      <button class="send-button " (click)="changeSendMessage()" style="background: #DB6767"> X </button>
+    </div>
+  </div>
+</section>
