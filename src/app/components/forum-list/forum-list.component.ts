@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class ForumListComponent {
 
+  isAddQuestion = true
+
+
+  changeIsAddQuestion(){
+    this.isAddQuestion = !this.isAddQuestion
+  }
+
 }

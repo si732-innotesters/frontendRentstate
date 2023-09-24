@@ -1,12 +1,12 @@
 mat-card-title{
-  margin:2rem;
+  margin:1.5rem;
   text-align: center;
   color: #002C3E;
   font-size: 1.7rem;
   font-weight: bold;
 }
 mat-card-subtitle{
-  margin:2rem;
+  margin:1.3rem;
   text-align: center;
   color: #002C3E;
   font-size: 1.3rem;
@@ -14,50 +14,93 @@ mat-card-subtitle{
 }
 mat-card{
   background-color: #2271B3;
-  margin-left: 15rem;
-  margin-right: 15rem;
+  padding: 10px;
+  width: 90%;
+  margin: auto;
+  max-width: 600px;
+  max-height: 500px;
 }
-
-.row {
-  display: flex;
-  justify-content: flex-start;
+.container{
+  overflow-y: scroll;
+  width: 90%;
+  margin: auto;
 }
-
+.container::-webkit-scrollbar {
+  width: 0.5em;
+}
+.container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0);
+}
 
 mat-card-content{
+  margin: 8px auto;
+  padding: 1rem;
   background-color: #B7D5E5;
-  padding-top: 1rem;
-  margin: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
 }
+
 
 img{
-  width: 3rem;
-  margin-right: 3rem;
-  margin-bottom: 0.5rem;
-}
-
-.form-reply{
-  width: 100%;
-  margin-left: 1rem;
+  width: 3.5rem;
   margin-right: 1rem;
 }
+a{
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+a:hover{
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 600;
+}
 
-.reply-full-width {
-  width: 80%;
+.comment {
+  display: flex;
+  align-items: center;
+  background-color: #f7f7f7;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px auto 0;
+  width: 85%;
+}
+
+.comment-input {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.comment-textarea {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  resize: none;
+}
+
+.comment-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.comment-button:hover {
+  background-color: #0056b3;
+}
+.comment-button:active {
+  transform: scale(0.8);
 }
 
 
-@media (max-width: 768px) {
-  mat-card {
-    margin-left: 2rem;
-    margin-right: 2rem;
-  }
-}
 
-@media (max-width: 576px) {
-  mat-card {
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-}
 
