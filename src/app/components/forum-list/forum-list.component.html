@@ -1,0 +1,64 @@
+
+<mat-card-title>FORUM</mat-card-title>
+ <mat-card>
+   <div class="new-button">
+     <button mat-flat-button (click)="changeIsAddQuestion()">New Forum</button>
+   </div>
+
+   <div class="content">
+
+     <mat-card-content>
+       <div class="element">
+         <img src="assets/images/imgUser.png" alt="">
+       </div>
+       <div class="element">
+         <a>¿Cuál es el precio promedio de un departamento en Surco?</a>
+       </div>
+     </mat-card-content>
+     <mat-card-content>
+       <div class="element">
+         <img src="assets/images/imgUser.png" alt="">
+       </div>
+       <div class="element">
+         <a>¿Cuál es el precio promedio de un departamento en Surco?</a>
+       </div>
+     </mat-card-content>
+     <mat-card-content>
+       <div class="element">
+         <img src="assets/images/imgUser.png" alt="">
+       </div>
+       <div class="element">
+         <a>¿Cuál es el precio promedio de un departamento en Surco?</a>
+       </div>
+     </mat-card-content>
+     <mat-card-content>
+       <div class="element">
+         <img src="assets/images/imgUser.png" alt="">
+       </div>
+       <div class="element">
+         <a>¿Cuál es el precio promedio de un departamento en Surco?</a>
+       </div>
+     </mat-card-content>
+     <mat-card-content>
+       <div class="element">
+         <img src="assets/images/imgUser.png" alt="">
+       </div>
+       <div class="element">
+         <a>¿Cuál es el precio promedio de un departamento en Surco?</a>
+       </div>
+     </mat-card-content>
+
+   </div>
+
+ </mat-card>
+
+<section class="new-forum" *ngIf="isAddQuestion">
+  <div class="forum-header">
+    <h2>Ask your question</h2>
+  </div>
+  <div class="forum-body">
+    <textarea class="question-textarea" placeholder="Type your question here"></textarea>
+    <button class="publish-button" (click)="changeIsAddQuestion()">Publish</button>
+  </div>
+</section>
+

@@ -1,0 +1,129 @@
+mat-card{
+  background: #002C3E;
+  margin: auto;
+  padding-bottom: 15px;
+  max-height: 400px;
+  width: 90%;
+  max-width: 700px;
+}
+.content{
+  background-color: #2271B3;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  overflow-y: scroll;
+}
+.content::-webkit-scrollbar {
+  width: 0.5em;
+}
+.content::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.new-button button{
+  background-color: #67A1DB;
+  color: white;
+  margin: 1rem 1rem;
+  padding: 1rem 2rem;
+}
+
+mat-card-content{
+  background-color: #B7D5E5;
+  padding-top: 1rem;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-card-title{
+  margin:2rem;
+  text-align: center;
+  color: #002C3E;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.new-button button:active{
+  transform: scale(0.8);
+}
+
+.element img{
+  align-items: center;
+  cursor: pointer;
+}
+
+.element a{
+  font-size: 1rem;
+  text-align:end;
+  cursor: pointer;
+  font-weight: 500;
+}
+.element a:hover{
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+img{
+  width: 3rem;
+  margin-right: 1rem;
+}
+
+@media (min-width: 750px) {
+  mat-card{
+    max-height: 500px;
+  }
+}
+
+
+.new-forum {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 60%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.forum-header h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.forum-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.question-textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  min-height: 100px;
+  resize: none;
+}
+
+.publish-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.publish-button:hover {
+  background-color: #0056b3;
+}
