@@ -15,6 +15,16 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import {ForumSeeComponent} from "./components/forum-see/forum-see.component";
 import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+import { ListPostsComponent } from './components/list-posts/list-posts.component';
+import { SeePostComponent } from './components/see-post/see-post.component';
+import { CommentsComponent} from "./components/see-post/comments/comments.component";
+import {MatIconModule} from "@angular/material/icon";
+import { SeeProfileComponent } from './components/see-profile/see-profile.component';
+import { ChatsComponent } from './components/see-messages/chats/chats.component';
+import {HttpClientModule} from "@angular/common/http";
+import { SeeMessagesComponent } from './components/see-messages/see-messages.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +34,14 @@ import {MatIconModule} from "@angular/material/icon";
     RegisterComponent,
     ForumListComponent,
     ForumSeeComponent
+    EditProfileComponent,
+    WelcomeComponent,
+    ListPostsComponent,
+    SeePostComponent,
+    CommentsComponent,
+    SeeProfileComponent,
+    ChatsComponent,
+    SeeMessagesComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +53,8 @@ import {MatIconModule} from "@angular/material/icon";
     MatGridListModule,
     MatInputModule,
     MatIconModule
+    MatIconModule,
+      HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

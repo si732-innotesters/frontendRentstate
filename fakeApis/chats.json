@@ -1,0 +1,99 @@
+{
+  "EmilyBrown": [
+    {
+      "authorId": "1",
+      "recipientId": "2",
+      "content": "¿Qué te parece si planeamos unas vacaciones juntos? ¿Algún lugar que siempre hayas querido visitar?"
+    },
+    {
+      "authorId": "2",
+      "recipientId": "1",
+      "content": "¡Eso suena emocionante! Siempre he querido ir a París. ¿Qué opinas de esa idea?"
+    },
+    {
+      "authorId": "1",
+      "recipientId": "2",
+      "content": "¡París suena perfecto! Imagina pasear juntos por la Torre Eiffel y disfrutar de la deliciosa comida francesa. Sería un sueño hecho realidad."
+    },
+    {
+      "authorId": "2",
+      "recipientId": "1",
+      "content": "Estoy emocionada solo de pensarlo. Sería el viaje más romántico de nuestras vidas. ❤️"
+    },
+    {
+      "authorId": "1",
+      "recipientId": "2",
+      "content": "También puedo imaginar una cena en un encantador café parisino. ¿Qué platillo te gustaría probar primero?"
+    },
+    {
+      "authorId": "2",
+      "recipientId": "1",
+      "content": "Definitivamente quiche lorraine y croissants. ¡Y no olvidemos el vino! 🍷"
+    },
+    {
+      "authorId": "1",
+      "recipientId": "2",
+      "content": "¡Buena elección! Y después podríamos dar un paseo nocturno por el Sena, bajo las luces de la ciudad."
+    },
+    {
+      "authorId": "2",
+      "recipientId": "1",
+      "content": "Eso suena tan romántico. No puedo esperar para que se haga realidad, mi amor. 💕"
+    },
+    {
+      "authorId": "1",
+      "recipientId": "2",
+      "content": "Cada día a tu lado es una aventura, y quiero vivir muchas más juntos. ¿Tienes algún sueño que quieras cumplir?"
+    },
+    {
+      "authorId": "2",
+      "recipientId": "1",
+      "content": "Mi mayor sueño es construir una vida feliz a tu lado, y eso es lo que estamos haciendo. 😊"
+    },
+    {
+      "authorId": "1",
+      "recipientId": "2",
+      "content": "Eres mi mayor alegría y mi mayor logro. No puedo pedir nada más en la vida."
+    },
+    {
+      "authorId": "2",
+      "recipientId": "1",
+      "content": "Tú también eres mi mayor alegría, mi amor. Estoy agradecida por cada momento que compartimos. 💖"
+    },
+    {
+      "authorId": "1",
+      "recipientId": "2",
+      "content": "¿Cómo te sientes hoy? ¿Hay algo en particular que quieras compartir?"
+    },
+    {
+      "authorId": "2",
+      "recipientId": "1",
+      "content": "Hoy me siento especialmente feliz porque tengo a la mejor persona a mi lado. 😄 ¿Y tú?"
+    },
+    {
+      "authorId": "1",
+      "recipientId": "2",
+      "content": "Me siento igual de feliz, sabiendo que te tengo a ti. Eres mi luz en los días más oscuros."
+    },
+    {
+      "authorId": "2",
+      "recipientId": "1",
+      "content": "Nuestra conexión es mi refugio en cualquier momento. Te amo más de lo que las palabras pueden expresar. ❤️"
+    },
+    {
+      "authorId": "1",
+      "recipientId": "2",
+      "content": "Y yo te amo con todo mi corazón, más de lo que jamás creí posible. Eres mi todo."
+    },
+    {
+      "authorId": "2",
+      "recipientId": "1",
+      "content": "Estaré esperando ansiosamente el día en que podamos abrazarnos y decirnos esto en persona. 🥰"
+    },
+    {
+      "authorId": "1",
+      "recipientId": "2",
+      "content": "No puedo esperar para ese momento. Será el día más especial de nuestras vidas. Te amo, mi amor. ❤️"
+    }
+  ]
+}

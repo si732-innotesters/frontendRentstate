@@ -1,0 +1,91 @@
+
+.container{
+  background: white;
+  height: 500px;
+  padding: 20px 10% 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+h3{
+  margin-bottom:  10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #3498db;
+  border-bottom: 1px solid #484A4C;
+  width: 100%;
+}
+.message-box{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: scroll;
+  max-width: 600px;
+}
+.message-box::-webkit-scrollbar {
+  width: 0.5em;
+}
+.message-box::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.content{
+  padding: 5px 20px;
+  border-radius: 10px;
+  margin: 3px 0;
+  max-width: 70%;
+  color: white;
+  font-weight: 500;
+}
+.sent {
+  background-color: #282B2F;
+  align-self: flex-end;
+}
+.received {
+  background-color: #484A4C;
+  align-self: flex-start;
+}
+
+.input-message {
+  display: flex;
+  align-items: center;
+  background-color: #3498db;
+  padding:  5px ;
+  width: 100%;
+}
+
+textarea {
+  flex: 1;
+  border: none;
+  resize: none;
+  padding: 5px;
+  border-radius: 5px;
+  outline: none;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+mat-icon {
+  margin-left: 10px;
+  cursor: pointer;
+  color: #002C3E;
+  font-size: 2rem;
+  width: min-content;
+  height: auto;
+  transition: .3s;
+}
+mat-icon:active {
+  transform: scale(0.7);
+}
+
+@media (min-width: 700px){
+
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 5px 0;
+  }
+}

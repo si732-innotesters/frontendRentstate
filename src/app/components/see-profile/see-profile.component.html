@@ -1,0 +1,45 @@
+
+<div class="container">
+  <section class="profile">
+    <div class="user">
+      <div class="photoUser">
+        <label>Premium</label>
+      </div>
+      <p>⭐⭐⭐⭐⭐</p>
+    </div>
+
+    <div class="info">
+      <p id="name">Arzon Lopez</p>
+      <p id="gender">Male</p>
+      <p id="age">21 Years</p>
+      <p id="description">Asegúrate de que estás utilizando una biblioteca de iconos como
+        "Material Icons" para el ícono del botón y de que tu HTML incluye la
+        referencia adecuada a esta biblioteca.</p>
+      <span></span>
+      <a id="send-message" (click)="changeSendMessage()">Send Message <mat-icon>send</mat-icon></a>
+      <span></span>
+    </div>
+  </section>
+
+  <section class="qualify">
+      <label>Rate this user's profile</label>
+      <p>⭐⭐⭐⭐⭐</p>
+      <button>Qualify</button>
+  </section>
+
+</div>
+
+<section class="send-message" *ngIf="sendMessage">
+  <h2>Send Message</h2>
+  <div class="message-box">
+    <label>To: Arzon Lopez</label>
+    <div class="message">
+      <label>Write message:</label>
+      <textarea id="message"></textarea>
+    </div>
+    <div class="buttons">
+      <button class="send-button" (click)="changeSendMessage()"> <mat-icon>send</mat-icon> </button>
+      <button class="send-button " (click)="changeSendMessage()" style="background: #DB6767"> X </button>
+    </div>
+  </div>
+</section>

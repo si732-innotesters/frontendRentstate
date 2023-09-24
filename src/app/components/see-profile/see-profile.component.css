@@ -1,0 +1,177 @@
+
+.container{
+  margin-top: 2rem;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.photoUser{
+  width: 120px;
+  height: 120px;
+  background-image:url("https://cdn-icons-png.flaticon.com/512/1144/1144760.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.photoUser label{
+  background: #064789;
+  color: white;
+  font-weight: 500;
+  font-size: 0.8rem;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+.info{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 0.1rem 1rem;
+  width: 90%;
+  margin: auto;
+}
+.info p{
+  background: #67A1DB;
+  padding: 5px 15px;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.info a{
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .3s;
+}
+.info a:hover{
+  text-decoration: underline;
+  transform: scale(1.2);
+}
+
+
+#name{
+  grid-column: span 2;
+}
+#description{
+  grid-column: span 4;
+  white-space: normal;
+  padding: 5px 50px;
+  text-align: justify;
+}
+#send-message{
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.qualify{
+  background: white;
+  width: 80%;
+  max-width: 600px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px ;
+}
+.qualify label{
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 10px auto;
+}
+.qualify p{
+  font-size: 1.5rem;
+  margin: 10px auto;
+}
+.qualify button{
+  border: none;
+  margin: 10px auto;
+  padding: 8px 30px;
+  background: #0056b3;
+  font-weight: bold;
+  color: white;
+}
+
+@media (min-width: 750px) {
+
+  .profile{
+    display: flex;
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+  }
+  .photoUser{
+    width: 150px;
+    height: 150px;
+  }
+  .user{
+    margin-right: 50px;
+  }
+  .container{
+    margin-top: 6rem;
+  }
+
+}
+
+
+
+.send-message {
+  background-color: #b8d2ec;
+  width: 95%;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.message-box label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+textarea {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+}
+
+.send-button {
+  background: #0056b3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size:1rem;
+  display: block;
+  margin: auto;
+  height: 40px;
+  width: 80px;
+}
+.buttons{
+  display: flex;
+}
+
+
+

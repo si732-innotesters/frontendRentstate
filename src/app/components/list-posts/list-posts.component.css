@@ -1,0 +1,116 @@
+
+.post{
+  width: 90%;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+}
+.filter-box{
+  width: 100%;
+  background: whitesmoke;
+  display: grid;
+  place-items: center;
+}
+.filter-options{
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5px;
+  text-align: center;
+}
+.filter-options button{
+  border: none;
+  margin: 5px 20px;
+  color: #002C3E;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+.filter-options button:hover{
+  text-decoration: underline;
+}
+
+.imgPost{
+  width: 170px;
+  height: 170px;
+  margin: 10px auto;
+  background-image:url("https://www.lamudi.com.mx/journal/wp-content/uploads/2014/11/W47_Casa_Vs_Departamento_3-1024x692.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: start;
+}
+.imgPost span{
+  background: #67A1DB;
+  padding: 5px 15px;
+  border-radius: 3px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+}
+
+.infoPost{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 0.1rem 1rem;
+  width: 90%;
+  margin: auto;
+}
+.infoPost p{
+  border-radius: 5px;
+  background: #064789;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+#tittle{
+  grid-column: span 2;
+  font-size: 0.9rem;
+}
+#price{
+  justify-content: center;
+  font-size: 1rem;
+}
+#description{
+  grid-column: span 3;
+  font-size: 0.7rem;
+}
+
+.infoPost button{
+  border: none;
+  padding: 8px 15px;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  width: max-content;
+  margin: 10px auto 20px;
+}
+#showMore{
+  background: #002C3E;
+}
+#reserve{
+  background: #67A1DB;
+}
+
+
+@media (min-width: 720px){
+  .filter-options a {
+    margin: 5px 40px;
+  }
+
+  .post{
+    flex-direction: row;
+    max-width: 1000px;
+  }
+
+  .imgPost{
+    width: 50%;
+    height: auto;
+    margin: 0 20px;
+  }
+
+}

@@ -1,0 +1,18 @@
+
+.show-comment{
+  width: 90%;
+  margin: 10px auto;
+}
+span{
+  color: #67A1DB;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .3s;
+}
+span:hover{
+  text-decoration: underline;
+}
+p{
+  margin-left: 10px;
+  font-style: italic;
+}
