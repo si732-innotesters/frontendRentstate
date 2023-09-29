@@ -1,0 +1,29 @@
+<h1 class="title">Publish property</h1>
+<form (ngSubmit)="Post()" [formGroup]="postForm">
+  <div class="form-body">
+    <mat-form-field appearance="outline" class="form-field-title">
+      <mat-label>Title</mat-label>
+      <input matInput type="text" name="Title" formControlName="title" >
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Select Property</mat-label>
+      <mat-select formControlName="property">
+        <mat-option>Ga</mat-option>
+      </mat-select>
+      <mat-icon matSuffix>arrow_circle_down</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Price</mat-label>
+      <input matInput type="text" name="Price" formControlName="price" >
+      <mat-icon matSuffix >monetization_on</mat-icon>
+    </mat-form-field>
+  </div>
+
+  <button type="submit" class="button-post">Save</button>
+
+</form>
+
+

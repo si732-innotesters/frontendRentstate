@@ -1,0 +1,52 @@
+.title{
+  font-weight: bold;
+  text-align: center;
+  color: #002C3E;
+  font-size: x-large;
+  margin-top: 2rem;
+}
+form{
+  background: white;
+  padding: 2rem;
+  border-radius: 2rem;
+  margin: 20px auto;
+  width: 70%;
+  max-width: 600px;
+}
+.form-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  }
+.button-post{
+  background: #3C84AB;
+  padding: 15px;
+  margin: 20px auto;
+  display: block;
+  width: 70%;
+  border-radius: 2rem;
+  font-weight: bold;
+  color: white;
+  font-size: large;
+  border: none;
+}
+.button-post:hover{
+  background: #205E61;
+  color: black;
+  transform: scale(1);
+}
+
+@media (min-width: 720px) {
+
+  .form-body {
+    grid-template-columns: repeat(2,1fr);
+    display: grid;
+    gap: 0.3rem 2rem;
+  }
+  .form-field-title{
+    grid-column: span 2;
+  }
+
+}
+
+
