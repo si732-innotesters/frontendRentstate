@@ -27,6 +27,7 @@ import { SeeMessagesComponent } from './components/see-messages/see-messages.com
 import { PropertyFormComponent } from './components/property-form/property-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatSelectModule} from "@angular/material/select";
+import { PublishPropertyComponent } from './components/publish-property/publish-property.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import {MatSelectModule} from "@angular/material/select";
     SeeProfileComponent,
     ChatsComponent,
     SeeMessagesComponent,
-    PropertyFormComponent
+    PropertyFormComponent,
+    PublishPropertyComponent
   ],
   imports: [
     BrowserModule,
