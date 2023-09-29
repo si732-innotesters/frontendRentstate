@@ -20,11 +20,13 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { ListPostsComponent } from './components/list-posts/list-posts.component';
 import { SeePostComponent } from './components/see-post/see-post.component';
 import { CommentsComponent} from "./components/see-post/comments/comments.component";
-import {MatIconModule} from "@angular/material/icon";
 import { SeeProfileComponent } from './components/see-profile/see-profile.component';
 import { ChatsComponent } from './components/see-messages/chats/chats.component';
 import {HttpClientModule} from "@angular/common/http";
 import { SeeMessagesComponent } from './components/see-messages/see-messages.component';
+import { PropertyFormComponent } from './components/property-form/property-form.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -33,7 +35,7 @@ import { SeeMessagesComponent } from './components/see-messages/see-messages.com
     FooterComponent,
     RegisterComponent,
     ForumListComponent,
-    ForumSeeComponent
+    ForumSeeComponent,
     EditProfileComponent,
     WelcomeComponent,
     ListPostsComponent,
@@ -41,7 +43,8 @@ import { SeeMessagesComponent } from './components/see-messages/see-messages.com
     CommentsComponent,
     SeeProfileComponent,
     ChatsComponent,
-    SeeMessagesComponent
+    SeeMessagesComponent,
+    PropertyFormComponent
   ],
   imports: [
     BrowserModule,
@@ -52,9 +55,10 @@ import { SeeMessagesComponent } from './components/see-messages/see-messages.com
     MatButtonModule,
     MatGridListModule,
     MatInputModule,
-    MatIconModule
     MatIconModule,
-      HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
