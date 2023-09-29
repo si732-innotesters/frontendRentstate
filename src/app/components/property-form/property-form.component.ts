@@ -22,7 +22,12 @@ export class PropertyFormComponent {
   }
 
   addProperty(){
-
+    if(this.propertyForm.valid){
+      alert("Valid")
+      console.log(this.propertyForm.value)
+    }else{
+      alert("Invalid")
+    }
   }
 
 
