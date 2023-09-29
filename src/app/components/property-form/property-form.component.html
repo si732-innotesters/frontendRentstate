@@ -1,0 +1,59 @@
+
+<h1 class="title">Register your property</h1>
+<form (ngSubmit)="addProperty()" [formGroup]="propertyForm" class="form">
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" name="Name" formControlName="name" >
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Category</mat-label>
+      <mat-select formControlName="category">
+        <mat-option value="one">Rooms</mat-option>
+        <mat-option value="two">Department</mat-option>
+        <mat-option value="three">Houses</mat-option>
+        <mat-option value="four">Commercial Space</mat-option>
+      </mat-select>
+      <mat-icon matSuffix>category</mat-icon>
+    </mat-form-field>
+
+  <mat-form-field appearance="outline" class="form-field-description">
+    <mat-label>Description</mat-label>
+    <textarea matInput formControlName="description"></textarea>
+    <mat-icon matSuffix>description</mat-icon>
+  </mat-form-field>
+
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Characteristics</mat-label>
+      <textarea matInput formControlName="characteristics"></textarea>
+      <mat-icon matSuffix>list_alt</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Location</mat-label>
+      <input matInput type="text" name="location" formControlName="location" >
+      <mat-icon matSuffix>pin_drop</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Available</mat-label>
+      <mat-select formControlName="available">
+        <mat-option value="one">Yes</mat-option>
+        <mat-option value="two">No</mat-option>
+      </mat-select>
+      <mat-icon matSuffix>check</mat-icon>
+    </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Image</mat-label>
+        <textarea matInput formControlName="url"></textarea>
+        <mat-icon matSuffix>photo</mat-icon>
+      </mat-form-field>
+
+    <div class="button-container">
+      <button type="submit" class="button-save">Save</button>
+    </div>
+
+
+</form>

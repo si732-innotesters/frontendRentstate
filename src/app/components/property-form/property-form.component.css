@@ -1,0 +1,55 @@
+.title{
+  font-weight: bold;
+  text-align: center;
+  color: #002C3E;
+  font-size: x-large;
+}
+.form{
+  background: white;
+  padding: 3rem;
+  border-radius: 2rem;
+  margin: 20px auto;
+  width: 70%;
+  max-width: 600px;
+  display: grid;
+  gap: 0.3rem 2rem;
+}
+.button-container{
+  text-align: center;
+}
+.button-save{
+  background: #3C84AB;
+  padding: 0.5rem 10rem;
+  border-radius: 2rem;
+  font-weight: bold;
+  color: white;
+  font-size: large;
+  border: none;
+}
+.button-save:hover{
+  background: #205E61;
+  color: black;
+}
+@media (max-width: 720px) {
+  .button-save{
+    padding: 0.5rem 5rem;
+  }
+}
+@media (min-width: 561px) {
+
+  .form {
+    grid-template-columns: repeat(2,1fr);
+  }
+  .form-field-description{
+    grid-column: span 2;
+  }
+  .button-container{
+    grid-column: span 2;
+  }
+}
+@media (max-width: 560px) {
+
+  .form {
+    grid-template-columns: repeat(1,1fr);
+  }
+}
