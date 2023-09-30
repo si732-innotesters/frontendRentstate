@@ -5,7 +5,7 @@
   <div class="form-body">
     <mat-form-field appearance="outline" class="form-field name">
       <mat-label>Name</mat-label>
-      <input matInput type="text" name="Name" formControlName="name" >
+      <input matInput type="text" name="name" formControlName="name" >
       <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
     </mat-form-field>
 
@@ -13,9 +13,9 @@
       <mat-label>Category</mat-label>
       <mat-select formControlName="category">
         <mat-option value="room">Rooms</mat-option>
-        <mat-option value="deparment">Department</mat-option>
+        <mat-option value="department">Department</mat-option>
         <mat-option value="house">Houses</mat-option>
-        <mat-option value="comelcialSpace">Commercial Space</mat-option>
+        <mat-option value="commelcialSpace">Commercial Space</mat-option>
       </mat-select>
       <mat-icon matSuffix>category</mat-icon>
     </mat-form-field>
@@ -40,15 +40,15 @@
 
       <mat-form-field appearance="outline" class="form-field imgUrl">
         <mat-label>Image</mat-label>
-        <textarea matInput formControlName="url"></textarea>
+        <textarea matInput formControlName="urlImg"></textarea>
         <mat-icon matSuffix>photo</mat-icon>
       </mat-form-field>
 
     <mat-form-field appearance="outline" class="form-field available">
       <mat-label>Available</mat-label>
       <mat-select formControlName="available">
-        <mat-option value="one">Yes</mat-option>
-        <mat-option value="two">No</mat-option>
+        <mat-option value="true">Yes</mat-option>
+        <mat-option value="false">No</mat-option>
       </mat-select>
       <mat-icon matSuffix>check</mat-icon>
     </mat-form-field>

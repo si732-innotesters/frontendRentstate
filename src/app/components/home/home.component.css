@@ -1,0 +1,38 @@
+
+main{
+  background: #002C3E;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+}
+.container{
+  max-width: 750px;
+  margin-top: 50px;
+}
+img{
+  width: 50%;
+  max-width: 500px;
+  height: auto;
+  margin-bottom: 50px;
+}
+p{
+  font-size: 1.5rem;
+  color: #C9EEFF;
+  line-height: 2.6rem;
+  margin-bottom: 50px;
+}
+button{
+  background: #C9EEFF;
+  padding: 10px;
+  width: 50%;
+  max-width: 300px;
+  border: 1px solid black;
+  border-radius: 3px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #002C3E;
+
+}
+

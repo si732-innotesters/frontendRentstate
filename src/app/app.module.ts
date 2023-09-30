@@ -25,9 +25,10 @@ import { ChatsComponent } from './components/see-messages/chats/chats.component'
 import {HttpClientModule} from "@angular/common/http";
 import { SeeMessagesComponent } from './components/see-messages/see-messages.component';
 import { PropertyFormComponent } from './components/property-form/property-form.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatSelectModule} from "@angular/material/select";
 import { PublishPropertyComponent } from './components/publish-property/publish-property.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { PublishPropertyComponent } from './components/publish-property/publish-
     ChatsComponent,
     SeeMessagesComponent,
     PropertyFormComponent,
-    PublishPropertyComponent
+    PublishPropertyComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +62,8 @@ import { PublishPropertyComponent } from './components/publish-property/publish-
     MatIconModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
