@@ -8,6 +8,7 @@ import {Property} from "../../models/Property";
 export class PropertyService {
 
   baseUrl: string="https://logicminds-server.onrender.com/Properties";
+
   constructor(private _http:HttpClient) {}
 
   getAllProperties(){
