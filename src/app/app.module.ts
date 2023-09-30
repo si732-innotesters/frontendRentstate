@@ -28,6 +28,7 @@ import { PropertyFormComponent } from './components/property-form/property-form.
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatSelectModule} from "@angular/material/select";
 import { PublishPropertyComponent } from './components/publish-property/publish-property.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { PublishPropertyComponent } from './components/publish-property/publish-
     ChatsComponent,
     SeeMessagesComponent,
     PropertyFormComponent,
-    PublishPropertyComponent
+    PublishPropertyComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
