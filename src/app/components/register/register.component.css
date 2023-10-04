@@ -36,12 +36,13 @@ form{
 .input-box label{
   color: black;
   font-weight: 700;
+  margin-bottom: 3px;
 }
 .input-box input{
   border: none;
   background: white;
   height: 1rem;
-  padding: 0.5rem 1rem;
+  padding: 1rem;
   font-style: italic;
   margin-bottom: 1rem;
 }
@@ -52,8 +53,10 @@ button{
   font-weight: 600;
   border: none;
   border-radius: 5px;
-  padding: .5rem 2rem;
-  margin:auto;
+  padding: 0.7rem 2rem;
+  margin:30px auto;
+  width: 90%;
+  max-width: 230px;
   display: block;
   cursor: pointer;
   transition: 0.3s;
@@ -61,12 +64,12 @@ button{
 button:hover{
   background: #5ab3d5;
   color: black;
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 .imgForm{
   display: none;
 }
-@media (min-width: 700px){
+@media (min-width: 720px){
 
   .container{
     max-width: 1000px;
