@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {MessageService} from "../../../shared/services/message.service";
+import {MessageService} from "../../../public/shared/services/message.service";
 
 @Component({
   selector: 'app-chats',

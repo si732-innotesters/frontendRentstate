@@ -1,24 +1,36 @@
 
-<div class="filter-box">
-  <div class="filter-options">
-    <button>Departments</button>
-    <button>Rooms</button>
-    <button>Commercial Space</button>
-    <button>Houses</button>
-  </div>
-</div>
-
-<section class="post" *ngFor="let post of posts" >
-  <div class="imgPost">
-    <span>{{getPropertyById(post.propertyId)?.category}}</span>
-  </div>
-  <div class="infoPost">
-    <p id="tittle">{{post.title}}</p>
-    <p id="price">$  {{post.price}}</p>
-    <p id="description">{{getPropertyById(post.propertyId)?.description}}</p>
-    <button id="showMore" routerLink="/see-post/{{post.id}}">Show more</button>
-    <span></span>
-    <button id="reserve">Reserve</button>
+<section>
+  <div class="container">
+    <a (click)="selectCategory('commercialSpace')"
+       [ngClass]="(category== 'commercialSpace')?'selected':''">Commercial Space</a>
+    <a (click)="selectCategory('room')"
+       [ngClass]="(category== 'room')?'selected':''">Rooms</a>
+    <a (click)="selectCategory('house')"
+       [ngClass]="(category== 'house')?'selected':''">Houses</a>
+    <a (click)="selectCategory('department')"
+       [ngClass]="(category== 'department')?'selected':''">Departments</a>
   </div>
 </section>
+
+<input class="filter-input" matInput (keyup)="applyFilter($event)" placeholder="Ex. Mar">
+
+<div class="posts">
+  <ng-container *ngFor="let post of posts">
+    <div class="card-content">
+      <div class="imgPost" style="background-image: url({{getPropertyById(post.propertyId)?.urlImg}})">
+        <span>{{getPropertyById(post.propertyId)?.category}}</span>
+      </div>
+      <div class="text-container">
+        <mat-card-title class="title">{{ post.title }}</mat-card-title>
+        <mat-card-subtitle class="price">$ {{ post.price }}</mat-card-subtitle>
+        <mat-card-subtitle class="description">{{getPropertyById(post.propertyId)?.description}}</mat-card-subtitle>
+        <mat-card-actions class="card-actions">
+          <button class="open-new" routerLink="/see-post/{{post.id}}">Show more</button>
+        </mat-card-actions>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+
 

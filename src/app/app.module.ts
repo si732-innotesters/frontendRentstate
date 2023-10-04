@@ -12,7 +12,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {MatButtonModule} from "@angular/material/button";
 import {MatGridListModule} from "@angular/material/grid-list";
-import {ForumSeeComponent} from "./components/forum-see/forum-see.component";
+import {ForumSeeComponent} from "./components/forum-list/forum-see/forum-see.component";
 import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';

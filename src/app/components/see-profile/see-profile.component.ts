@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from "../../models/User";
-import {UserService} from "../services/user.service";
+import {UserService} from "../../public/shared/services/user.service";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
@@ -29,7 +29,7 @@ export class SeeProfileComponent implements OnInit{
       id = Number(param.get('id'))
     })
     if(id != null){
-      this._userService.getUserById(id).subscribe((data)=>{
+      this._userService.getById(id).subscribe((data)=>{
         this.user = data
       })
     }

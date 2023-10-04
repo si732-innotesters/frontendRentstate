@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {PropertyService} from "../services/property.service";
+import {PropertyService} from "../../public/shared/services/property.service";
 import {Property} from "../../models/Property";
 import {Route, Router, Routes} from "@angular/router";
-import {PostService} from "../services/post.service";
+import {PostService} from "../../public/shared/services/post.service";
 
 @Component({
   selector: 'app-publish-property',
@@ -31,7 +31,7 @@ export class PublishPropertyComponent implements OnInit{
  }
 
  getAllProperties(){
-    this._propertyService.getAllProperties().subscribe({
+    this._propertyService.getAll().subscribe({
       next:(val:any)=>{
         this.properties=val
 
@@ -44,7 +44,7 @@ export class PublishPropertyComponent implements OnInit{
 
  addPost(){
     if(this.postForm.valid){
-      this._postsService.addPost(this.postForm.value).subscribe(()=>{
+      this._postsService.create(this.postForm.value).subscribe(()=>{
         console.log("Post Added")
       })
     }else{

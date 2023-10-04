@@ -29,11 +29,14 @@ mat-card{
 
 mat-card-content{
   background-color: #B7D5E5;
-  padding-top: 1rem;
-  margin: 1rem;
+  margin: 1rem auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 8px 0;
+  width: 90%;
+  text-align: center;
+
 }
 
 mat-card-title{
@@ -44,6 +47,13 @@ mat-card-title{
   font-weight: bold;
 }
 
+.element{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 95%;
+}
 .element img{
   align-items: center;
   cursor: pointer;
@@ -51,7 +61,6 @@ mat-card-title{
 
 .element a{
   font-size: 1rem;
-  text-align:end;
   cursor: pointer;
   font-weight: 500;
 }
@@ -124,3 +133,4 @@ img{
   background-color: #0056b3;
   transform: scale(0.9);
 }
+

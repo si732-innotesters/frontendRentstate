@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Property} from "../../models/Property";
-import {UserService} from "../services/user.service";
-import {PropertyService} from "../services/property.service";
+import {UserService} from "../../public/shared/services/user.service";
+import {PropertyService} from "../../public/shared/services/property.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -51,7 +51,7 @@ export class PropertyFormComponent implements OnInit{
       };
 
       console.log(this.property);
-      this._propertyService.addProperty(this.property).subscribe(()=>{
+      this._propertyService.create(this.property).subscribe(()=>{
         console.log("Property Added")
         this._router.navigate(['/add-post'])
       })

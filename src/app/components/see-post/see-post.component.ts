@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {Post} from "../../models/Post";
 import {Property} from "../../models/Property";
-import {PostService} from "../services/post.service";
+import {PostService} from "../../public/shared/services/post.service";
 import {ActivatedRoute} from "@angular/router";
-import {PropertyService} from "../services/property.service";
-import {UserService} from "../services/user.service";
+import {PropertyService} from "../../public/shared/services/property.service";
+import {UserService} from "../../public/shared/services/user.service";
 import {User} from "../../models/User";
 
 @Component({
@@ -30,7 +30,7 @@ export class SeePostComponent implements OnInit{
   getPost(){
     this.route.paramMap.subscribe(params => {
       const postId = Number(params.get('id'));
-      this._postService.getPostById(postId).subscribe((data)=>{
+      this._postService.getById(postId).subscribe((data)=>{
         this.post = data
 
         this.getProperty()
@@ -38,7 +38,7 @@ export class SeePostComponent implements OnInit{
     });
   }
   getProperty(){
-      this._propertyService.getPropertyById(this.post.propertyId).subscribe((data)=>{
+      this._propertyService.getById(this.post.propertyId).subscribe((data)=>{
         this.property = data
         this.getUser()
 
@@ -46,7 +46,7 @@ export class SeePostComponent implements OnInit{
   }
 
   getUser(){
-    this._userService.getUserById(this.property.authorId).subscribe((data)=>{
+    this._userService.getById (this.property.authorId).subscribe((data)=>{
       this.user= data
     })
   }

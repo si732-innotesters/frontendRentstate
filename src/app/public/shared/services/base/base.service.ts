@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {environment} from "../../envieonments/environment.developments";
+import {environment} from "../../../../envieonments/environment.developments";
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {catchError, retry, throwError} from "rxjs";
 
@@ -28,6 +28,11 @@ export class BaseService <T>{
     return this._httpClient.get<T>(this.resourcePath(), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError))
   }
+  getById(id: any) {
+    return this._httpClient.get<T>(`${this.resourcePath()}/${id}`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
   create(item:any){
     return this._httpClient.post(this.resourcePath(), JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError))
