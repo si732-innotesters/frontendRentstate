@@ -28,6 +28,7 @@ import { PropertyFormComponent } from './components/property-form/property-form.
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatSelectModule} from "@angular/material/select";
 import { PublishPropertyComponent } from './components/publish-property/publish-property.component';
+import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
@@ -48,7 +49,8 @@ import { HomeComponent } from './components/home/home.component';
     SeeMessagesComponent,
     PropertyFormComponent,
     PublishPropertyComponent,
-    HomeComponent
+    LoginComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
