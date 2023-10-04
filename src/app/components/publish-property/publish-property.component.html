@@ -1,5 +1,5 @@
 <h1 class="title">Publish property</h1>
-<form (ngSubmit)="Post()" [formGroup]="postForm">
+<form (submit)="addPost()" [formGroup]="postForm">
   <div class="form-body">
     <mat-form-field appearance="outline" class="form-field-title">
       <mat-label>Title</mat-label>
@@ -9,8 +9,10 @@
 
     <mat-form-field appearance="outline" class="form-field">
       <mat-label>Select Property</mat-label>
-      <mat-select formControlName="property">
-        <mat-option>Ga</mat-option>
+      <mat-select formControlName="propertyId">
+        <mat-option *ngFor="let property of properties" [value]="property.id">
+          {{property.name}}
+        </mat-option>
       </mat-select>
       <mat-icon matSuffix>arrow_circle_down</mat-icon>
     </mat-form-field>

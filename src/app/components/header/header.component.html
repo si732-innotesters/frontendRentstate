@@ -1,14 +1,14 @@
 
 <header>
-  <img src="./assets/images/logo.png" class="imgLogo">
+  <img src="./assets/images/logo.png" class="imgLogo" routerLink="/home">
 
   <div class="options">
-    <button>Posts</button>
-    <button>Forum</button>
+    <button routerLink="/list-posts">Posts</button>
+    <button routerLink="/forum">Forum</button>
     <span></span>
-    <button style="background: #67A1DB; margin-right: 20px">Post</button>
-    <img src="./assets/images/imgMessage.png" id="imgMessage">
-    <img src="./assets/images/imgUser.png" id="imgUser">
+    <button  routerLink="/add-post" style="background: #67A1DB; margin-right: 20px">Post</button>
+    <img src="./assets/images/imgMessage.png" id="imgMessage" routerLink="/messages">
+    <img src="./assets/images/imgUser.png" id="imgUser" routerLink="/my-profile/1">
   </div>
 </header>
 

@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container" *ngIf="user">
   <section class="profile">
     <div class="user">
       <div class="photoUser">
@@ -9,12 +9,10 @@
     </div>
 
     <div class="info">
-      <p id="name">Arzon Lopez</p>
-      <p id="gender">Male</p>
-      <p id="age">21 Years</p>
-      <p id="description">Asegúrate de que estás utilizando una biblioteca de iconos como
-        "Material Icons" para el ícono del botón y de que tu HTML incluye la
-        referencia adecuada a esta biblioteca.</p>
+      <p id="name">{{user.lastName}} {{user.lastName}}</p>
+      <p id="gender">{{user.gender}}</p>
+      <p id="age">{{user.age}} Years</p>
+      <p id="description">{{user.description}}</p>
       <span></span>
       <a id="send-message" (click)="changeSendMessage()">Send Message <mat-icon>send</mat-icon></a>
       <span></span>
@@ -32,7 +30,7 @@
 <section class="send-message" *ngIf="sendMessage">
   <h2>Send Message</h2>
   <div class="message-box">
-    <label>To: Arzon Lopez</label>
+    <label>To: {{user.lastName}} {{user.lastName}}</label>
     <div class="message">
       <label>Write message:</label>
       <textarea id="message"></textarea>

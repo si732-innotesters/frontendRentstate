@@ -1,6 +1,6 @@
 mat-card{
   background: #002C3E;
-  margin: auto;
+  margin: 30px auto;
   padding-bottom: 15px;
   max-height: 400px;
   width: 90%;
@@ -42,10 +42,6 @@ mat-card-title{
   color: #002C3E;
   font-size: 1.7rem;
   font-weight: bold;
-}
-
-.new-button button:active{
-  transform: scale(0.8);
 }
 
 .element img{
@@ -126,4 +122,5 @@ img{
 
 .publish-button:hover {
   background-color: #0056b3;
+  transform: scale(0.9);
 }

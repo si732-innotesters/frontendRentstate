@@ -10,6 +10,6 @@ export class MessageService {
 
   getChats(name:string){
 
-    return this._httpCliet.get("http://localhost:3000/"+name)
+    return this._httpCliet.get("https://logicminds-server.onrender.com/"+name)
   }
 }
