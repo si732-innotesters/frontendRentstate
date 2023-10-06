@@ -3,13 +3,13 @@
   <section class="profile">
     <div class="user">
       <div class="photoUser">
-        <label>Premium</label>
+        <label *ngIf="user.isPremium">Premium</label>
       </div>
       <p>⭐⭐⭐⭐⭐</p>
     </div>
 
     <div class="info">
-      <p id="name">{{user.lastName}} {{user.lastName}}</p>
+      <p id="name">{{user.lastName}} {{user.name}}</p>
       <p id="gender">{{user.gender}}</p>
       <p id="age">{{user.age}} Years</p>
       <p id="description">{{user.description}}</p>
@@ -27,17 +27,18 @@
 
 </div>
 
-<section class="send-message" *ngIf="sendMessage">
-  <h2>Send Message</h2>
-  <div class="message-box">
-    <label>To: {{user.lastName}} {{user.lastName}}</label>
-    <div class="message">
-      <label>Write message:</label>
-      <textarea id="message"></textarea>
+  <section class="send-message" *ngIf="user">
+    <h2>Send Message</h2>
+    <div class="message-box">
+      <label>To: {{user.lastName}} {{user.name}}</label>
+      <div class="message">
+        <label>Write message:</label>
+        <textarea id="message"></textarea>
+      </div>
+      <div class="buttons">
+        <button class="send-button" (click)="changeSendMessage()"> <mat-icon>send</mat-icon> </button>
+        <button class="send-button " (click)="changeSendMessage()" style="background: #DB6767"> X </button>
+      </div>
     </div>
-    <div class="buttons">
-      <button class="send-button" (click)="changeSendMessage()"> <mat-icon>send</mat-icon> </button>
-      <button class="send-button " (click)="changeSendMessage()" style="background: #DB6767"> X </button>
-    </div>
-  </div>
-</section>
+  </section>
+

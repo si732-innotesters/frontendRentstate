@@ -3,5 +3,6 @@ export interface Message {
   authorId: number;
   recipientId: number;
   content: string;
+  date: Date;
   isOpen: boolean;
 }
