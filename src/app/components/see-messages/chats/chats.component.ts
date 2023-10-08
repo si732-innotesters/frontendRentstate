@@ -18,7 +18,6 @@ export class ChatsComponent implements OnInit{
   ngOnInit(): void {
     this._messageService.getChats("EmilyBrown").subscribe((data)=>{
       this.chats = data
-      console.log(this.chats)
     })
   }
 }

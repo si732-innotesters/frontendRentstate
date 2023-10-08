@@ -1,6 +1,5 @@
 
-<div class="container">
-  <h3>Emily Brown</h3>
+
   <div class="message-box">
     <p *ngFor="let chat of chats"
        [ngClass]="(userLogedId==chat.authorId)?'content sent':'content received'">
@@ -8,9 +7,3 @@
     </p>
   </div>
 
-  <div class="input-message">
-    <textarea></textarea>
-    <mat-icon>send</mat-icon>
-  </div>
-
-</div>
