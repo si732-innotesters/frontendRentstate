@@ -30,6 +30,7 @@ import {MatSelectModule} from "@angular/material/select";
 import { PublishPropertyComponent } from './components/publish-property/publish-property.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
+import { SubscribeComponent } from './components/edit-profile/subscribe/subscribe.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { HomeComponent } from './components/home/home.component';
     PublishPropertyComponent,
     LoginComponent,
     HomeComponent,
+    SubscribeComponent,
   ],
   imports: [
     BrowserModule,

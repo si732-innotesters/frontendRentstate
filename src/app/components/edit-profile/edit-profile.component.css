@@ -37,7 +37,7 @@ form {
   flex: 1;
   text-align: right;
   padding-right: 10px;
-  color: black;
+  color: #0056b3;
   font-weight: bold;
 }
 .input-info{
@@ -59,12 +59,14 @@ textarea{
 
 form button {
   display: block;
-  margin: 10px auto;
+  margin: 30px auto 10px;
   border: none;
   border-radius: 5px;
   color: white;
   background: #002C3E;
   padding: 8px 50px;
+  width: 90%;
+  max-width: 300px;
 }
 
 .actions{
@@ -82,9 +84,8 @@ form button {
   background: #67A1DB;
   padding: 8px;
 }
-#btnCancel{
+.btnCancel{
   grid-column: span 2;
-  background: #DB6767;
 }
 
 @media (min-width: 750px) {
@@ -114,7 +115,10 @@ form button {
 
   .input-box{
     width: 100%;
+    flex-direction: column;
+    align-items: start;
     flex-wrap: wrap;
+
   }
   .input-info{
     font-size: 1rem;
@@ -129,33 +133,43 @@ form button {
     grid-template-columns: repeat(3,1fr);
     max-width: 500px;
   }
-  #btnCancel{
+  .btnCancel{
     grid-column: span 1;
     grid-row: span 2;
-    background: #DB6767;
   }
 
 }
 
 
 
+.alert {
+  background-color: #ffcccc;
+  border: 1px solid #ff0000;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #ff0000;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  width: 50%;
+  height: 20%;
+  margin: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
+.alert-icon {
+  margin-right: 10px;
+  font-weight: bold;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.alert p{
+  align-items: center;
+}
 
 
 

@@ -1,44 +1,44 @@
 
-<div class="container">
+<div class="container" *ngIf="user">
   <section class="profile">
     <div class="user">
-      <div class="photoUser">
-        <label>Premium</label>
+      <div class="photoUser" style="background-image:url({{user.photoUrl}})">
+        <label *ngIf="user.isPremium">Premium</label>
       </div>
       <p>⭐⭐⭐⭐⭐</p>
     </div>
 
-    <form action="">
+    <form [formGroup]="formUser" (ngSubmit)="updateUser()">
       <div class="edit-info">
         <div class="input-box">
           <label>Name:</label>
-          <input type="text" class="input-info" placeholder="Name">
+          <input type="text" class="input-info" placeholder="Name" formControlName="name">
         </div>
         <div class="input-box">
           <label>Last Name:</label>
-          <input type="text" class="input-info" placeholder="Last Name">
+          <input type="text" class="input-info" placeholder="Last Name" formControlName="lastName">
         </div>
         <div class="input-box">
           <label>Age:</label>
-          <input type="number" class="input-info" placeholder="Age">
+          <input type="number" class="input-info" placeholder="Age" formControlName="age">
         </div>
         <div class="input-box"  style=" grid-column: span 3">
           <label>Photo url:</label>
-          <input type="text" class="input-info" placeholder="url Photo">
+          <input type="text" class="input-info" placeholder="url Photo" formControlName="photoUrl">
         </div>
         <div class="input-box" style=" grid-column: span 2">
           <label>Email:</label>
-          <input type="email" class="input-info" placeholder="Email">
+          <input type="email" class="input-info" placeholder="Email" >
         </div>
         <div class="input-box">
           <label>Gender:</label>
-          <select class="input-info" placeholder="Gender">
-            <option *ngFor="let option of genderOptions">{{ option }}</option>
+          <select class="input-info" placeholder="Gender" formControlName="gender">
+            <option *ngFor="let option of genderOptions" [value]="option">{{ option }}</option>
           </select>
         </div>
         <div class="input-box" style=" grid-column: span 3">
           <label>Description:</label>
-          <textarea class="input-info" placeholder="Description"></textarea>
+          <textarea class="input-info" placeholder="Description" formControlName="description"></textarea>
         </div>
 
       </div>
@@ -50,8 +50,29 @@
   <section class="actions">
     <button>Your Posts</button>
     <button>Your Properties</button>
-    <button id="btnCancel">Cancel Subscription</button>
+    <button class="btnCancel" *ngIf="user.isPremium; else cancelSubscription" style="background: #DB6767"
+    (click)="updatePremiumUser()">
+      Cancel Subscription
+    </button>
     <button>Your Clients</button>
     <button>Reservations</button>
   </section>
 </div>
+
+<ng-template #cancelSubscription>
+  <button class="btnCancel"  style="background: #69DB67; color: black"
+  (click)="updatePremiumUser()">
+    Be Premium
+  </button>
+</ng-template>
+
+<section class="alert" *ngIf="showAlert">
+  <span class="alert-icon">Alert</span>
+  <p>Complete all fields to save</p>
+</section>
+
+
+<section *ngIf="updatePremium">
+  <app-subscribe></app-subscribe>
+</section>
+

@@ -61,7 +61,6 @@
       "renterId": 2
     }
   ],
-
   "Posts": [
     {
       "id": 1,
@@ -94,25 +93,26 @@
       "price": 550000
     }
   ],
-
   "Users": [
     {
-      "id": 1,
       "name": "John",
       "lastName": "Doe",
-      "age": 30,
       "gender": "Male",
       "description": "Avid traveler and nature enthusiast.",
-      "isPremium": true
+      "age": 30,
+      "photoUrl": "https://images.pexels.com/photos/4045762/pexels-photo-4045762.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "isPremium": false,
+      "id": 1
     },
     {
-      "id": 2,
       "name": "Jane",
       "lastName": "Smith",
-      "age": 28,
       "gender": "Female",
       "description": "Tech enthusiast and software developer.",
-      "isPremium": false
+      "age": 28,
+      "photoUrl": "https://images.pexels.com/photos/4063856/pexels-photo-4063856.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "isPremium": false,
+      "id": 2
     },
     {
       "id": 3,
@@ -121,7 +121,8 @@
       "age": 35,
       "gender": "Female",
       "description": "Art lover and freelance artist.",
-      "isPremium": true
+      "isPremium": true,
+      "photoUrl": ""
     },
     {
       "id": 4,
@@ -130,7 +131,8 @@
       "age": 25,
       "gender": "Male",
       "description": "Sports enthusiast and fitness trainer.",
-      "isPremium": false
+      "isPremium": false,
+      "photoUrl": ""
     },
     {
       "id": 5,
@@ -139,11 +141,10 @@
       "age": 40,
       "gender": "Female",
       "description": "Foodie and culinary expert.",
-      "isPremium": true
+      "isPremium": true,
+      "photoUrl": ""
     }
   ],
-
-
   "EmilyBrown": [
     {
       "authorId": "1",
@@ -271,65 +272,63 @@
   "ForumAnswer": [
     {
       "id": 1,
-      "questionId":1,
+      "questionId": 1,
       "authorId": 2,
       "content": "Es importante tener en cuenta que la disponibilidad y los precios de los departamentos en el centro de la ciudad pueden variar según la demanda y la oferta en el mercado inmobiliario. Por lo tanto, te recomendaría estar atento a las nuevas publicaciones y ser perseverante en tu búsqueda para aumentar tus posibilidades de encontrar un buen departamento en el centro de la ciudad."
     },
     {
       "id": 2,
-      "questionId":1,
+      "questionId": 1,
       "authorId": 3,
       "content": "Sí, muchas personas han encontrado buenos departamentos en el centro de la ciudad."
     },
     {
       "id": 3,
-      "questionId":2,
+      "questionId": 2,
       "authorId": 1,
-      "content":"Algunas de las mejores zonas en Perú para buscar un dormitorio en alquiler son: Miraflores y San Isidro"
+      "content": "Algunas de las mejores zonas en Perú para buscar un dormitorio en alquiler son: Miraflores y San Isidro"
     },
     {
       "id": 4,
-      "questionId":2,
+      "questionId": 2,
       "authorId": 3,
-      "content":"Además de estas zonas, también puedes considerar otros distritos como Surco, La Molina, San Borja y Pueblo Libre, que también tienen una oferta interesante de dormitorios en alquiler. Recuerda siempre investigar sobre la seguridad y las comodidades de cada zona antes de tomar una decisión."
+      "content": "Además de estas zonas, también puedes considerar otros distritos como Surco, La Molina, San Borja y Pueblo Libre, que también tienen una oferta interesante de dormitorios en alquiler. Recuerda siempre investigar sobre la seguridad y las comodidades de cada zona antes de tomar una decisión."
     },
     {
       "id": 5,
-      "questionId":3,
+      "questionId": 3,
       "authorId": 4,
-      "content":"Para encontrar locales comerciales en venta te recomendaría: Pasarte a la versión premium de la aplicación para ver más publicaciones."
+      "content": "Para encontrar locales comerciales en venta te recomendaría: Pasarte a la versión premium de la aplicación para ver más publicaciones."
     },
     {
       "id": 6,
-      "questionId":3,
+      "questionId": 3,
       "authorId": 5,
-      "content":"Es importante tener en cuenta que la disponibilidad y los precios de los locales comerciales en la zona industrial pueden variar según la ubicación y la demanda en el mercado. Por lo tanto, te recomendaría realizar una investigación exhaustiva y comparar diferentes opciones antes de tomar una decisión"
+      "content": "Es importante tener en cuenta que la disponibilidad y los precios de los locales comerciales en la zona industrial pueden variar según la ubicación y la demanda en el mercado. Por lo tanto, te recomendaría realizar una investigación exhaustiva y comparar diferentes opciones antes de tomar una decisión"
     },
     {
       "id": 7,
-      "questionId":4,
+      "questionId": 4,
       "authorId": 1,
-      "content":"Sí, muchas personas han tenido éxito en encontrar casas con jardín cerca de parques."
+      "content": "Sí, muchas personas han tenido éxito en encontrar casas con jardín cerca de parques."
     },
     {
       "id": 8,
-      "questionId":4,
+      "questionId": 4,
       "authorId": 3,
-      "content":"Es recomendable realizar visitas a las propiedades que te interesen y verificar personalmente si cumplen con tus expectativas en cuanto al jardín y la cercanía a parques."
+      "content": "Es recomendable realizar visitas a las propiedades que te interesen y verificar personalmente si cumplen con tus expectativas en cuanto al jardín y la cercanía a parques."
     },
     {
       "id": 9,
-      "questionId":5,
+      "questionId": 5,
       "authorId": 3,
-      "content":"Los precios promedio de los apartamentos de un dormitorio pueden oscilar entre 600 y 1500 dólares americanos al mes, dependiendo de la ubicación. Las zonas más exclusivas y céntricas tienden a ser más costosas."
+      "content": "Los precios promedio de los apartamentos de un dormitorio pueden oscilar entre 600 y 1500 dólares americanos al mes, dependiendo de la ubicación. Las zonas más exclusivas y céntricas tienden a ser más costosas."
     },
     {
       "id": 10,
-      "questionId":5,
+      "questionId": 5,
       "authorId": 2,
-      "content":"Los precios promedio de los apartamentos de un dormitorio puede variar según la ubicación"
+      "content": "Los precios promedio de los apartamentos de un dormitorio puede variar según la ubicación"
     }
   ]
 }
-
-

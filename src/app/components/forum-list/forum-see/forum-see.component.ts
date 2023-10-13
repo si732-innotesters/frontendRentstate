@@ -36,9 +36,6 @@ export class ForumSeeComponent implements OnInit{
       });
     });
 
-
-
-
   }
 
 

@@ -6,4 +6,5 @@ export interface User {
   gender: string;
   description: string;
   isPremium: boolean;
+  photoUrl:string
 }
