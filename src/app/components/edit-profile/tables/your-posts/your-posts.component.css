@@ -1,0 +1,32 @@
+.container{
+  width: 90%;
+  margin: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 2px solid #5ab3d5;
+}
+
+th, td {
+  border: 2px solid #5ab3d5;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #5ab3d5;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}

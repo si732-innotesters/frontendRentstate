@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Your Properties</h1>
+
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Price</th>
+    </tr>
+
+    <tr *ngFor="let post of posts">
+      <td>{{post.title}}</td>
+      <td>{{post.price}}</td>
+    </tr>
+  </table>
+</div>

@@ -48,7 +48,7 @@
   </section>
 
   <section class="actions">
-    <button>Your Posts</button>
+    <button routerLink="/your-posts/1">Your Posts</button>
     <button routerLink="/your-properties/1">Your Properties</button>
     <button class="btnCancel" *ngIf="user.isPremium; else cancelSubscription" style="background: #DB6767"
     (click)="updatePremiumUser()">
