@@ -101,7 +101,7 @@
       "description": "Avid traveler and nature enthusiast.",
       "age": 30,
       "photoUrl": "https://images.pexels.com/photos/4045762/pexels-photo-4045762.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "isPremium": false,
+      "isPremium": true,
       "id": 1
     },
     {
