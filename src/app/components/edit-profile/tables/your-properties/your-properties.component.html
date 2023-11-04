@@ -9,13 +9,18 @@
       <th>Title</th>
       <th>Category</th>
       <th>Available</th>
+      <th>Actions</th>
     </tr>
 
     <tr *ngFor="let property of properties">
-      <td><img src="{{property.urlImg}}" alt="Image"></td>
+      <td class="imgProperty"><img src="{{property.urlImg}}" alt="Image"></td>
       <td>{{property.description}}</td>
       <td>{{property.category}}</td>
-      <td>{{property.available ? 'Si' : 'No'}}</td>
+      <td>{{property.available ? 'Yes' : 'No'}}</td>
+      <td>
+        <mat-icon>edit</mat-icon>
+        <mat-icon>delete</mat-icon>
+      </td>
     </tr>
   </table>
 </div>
