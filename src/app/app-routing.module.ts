@@ -16,6 +16,7 @@ import {LoginComponent} from "./components/login/login.component";
 import {
   YourPropertiesComponent
 } from "./components/edit-profile/tables/your-properties/your-properties.component";
+import {YourPostsComponent} from "./components/edit-profile/tables/your-posts/your-posts.component";
 
 const routes: Routes = [
   {path: '', redirectTo:'home', pathMatch:'full'},
@@ -33,6 +34,7 @@ const routes: Routes = [
   {path: 'messages', component:SeeMessagesComponent},
   {path: 'register-property', component:PropertyFormComponent},
   {path: 'your-properties/:id', component:YourPropertiesComponent},
+  {path: 'your-posts/:id', component:YourPostsComponent}
 
 
 ];

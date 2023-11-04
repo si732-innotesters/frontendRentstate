@@ -32,6 +32,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { SubscribeComponent } from './components/edit-profile/subscribe/subscribe.component';
 import { YourPropertiesComponent } from './components/edit-profile/tables/your-properties/your-properties.component';
+import { YourPostsComponent } from './components/edit-profile/tables/your-posts/your-posts.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { YourPropertiesComponent } from './components/edit-profile/tables/your-p
     HomeComponent,
     SubscribeComponent,
     YourPropertiesComponent,
+    YourPostsComponent,
   ],
   imports: [
     BrowserModule,
