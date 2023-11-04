@@ -6,11 +6,11 @@
 table {
   border-collapse: collapse;
   width: 100%;
-  border: 2px solid #5ab3d5;
+  border: 2px solid #002C3E;
 }
 
 th, td {
-  border: 2px solid #5ab3d5;
+  border: 2px solid #002C3E;
   text-align: left;
   padding: 8px;
 }
