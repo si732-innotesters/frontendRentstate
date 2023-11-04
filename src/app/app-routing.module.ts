@@ -13,6 +13,9 @@ import {SeeMessagesComponent} from "./components/see-messages/see-messages.compo
 import {SeeProfileComponent} from "./components/see-profile/see-profile.component";
 import {PropertyFormComponent} from "./components/property-form/property-form.component";
 import {LoginComponent} from "./components/login/login.component";
+import {
+  YourPropertiesComponent
+} from "./components/edit-profile/tables/your-properties/your-properties.component";
 
 const routes: Routes = [
   {path: '', redirectTo:'home', pathMatch:'full'},
@@ -29,7 +32,7 @@ const routes: Routes = [
   {path: 'add-post', component:PublishPropertyComponent},
   {path: 'messages', component:SeeMessagesComponent},
   {path: 'register-property', component:PropertyFormComponent},
-
+  {path: 'your-properties/:id', component:YourPropertiesComponent},
 
 
 ];

@@ -31,6 +31,7 @@ import { PublishPropertyComponent } from './components/publish-property/publish-
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { SubscribeComponent } from './components/edit-profile/subscribe/subscribe.component';
+import { YourPropertiesComponent } from './components/edit-profile/tables/your-properties/your-properties.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { SubscribeComponent } from './components/edit-profile/subscribe/subscrib
     LoginComponent,
     HomeComponent,
     SubscribeComponent,
+    YourPropertiesComponent,
   ],
   imports: [
     BrowserModule,

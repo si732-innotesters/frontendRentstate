@@ -1,0 +1,22 @@
+
+
+<div class="container">
+  <h1>Your Properties</h1>
+
+  <table>
+    <tr>
+      <th>Image</th>
+      <th>Title</th>
+      <th>Category</th>
+      <th>Available</th>
+    </tr>
+
+    <tr *ngFor="let property of properties">
+      <td><img src="{{property.urlImg}}" alt="Image"></td>
+      <td>{{property.description}}</td>
+      <td>{{property.category}}</td>
+      <td>{{property.available ? 'Si' : 'No'}}</td>
+    </tr>
+  </table>
+</div>
+
