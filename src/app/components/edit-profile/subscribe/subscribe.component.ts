@@ -27,7 +27,7 @@ export class SubscribeComponent {
 
     this.user.isPremium = !this.user.isPremium
 
-    this._editComponent._userService.update(this.user.id, this.user).subscribe(() => {
+    this._editComponent._userService.update(this.user).subscribe(() => {
       this._editComponent.updatePremium = false
     })
   }

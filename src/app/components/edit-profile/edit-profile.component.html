@@ -26,17 +26,13 @@
           <label>Photo url:</label>
           <input type="text" class="input-info" placeholder="url Photo" formControlName="photoUrl">
         </div>
-        <div class="input-box" style=" grid-column: span 2">
-          <label>Email:</label>
-          <input type="email" class="input-info" placeholder="Email" >
-        </div>
         <div class="input-box">
           <label>Gender:</label>
           <select class="input-info" placeholder="Gender" formControlName="gender">
             <option *ngFor="let option of genderOptions" [value]="option">{{ option }}</option>
           </select>
         </div>
-        <div class="input-box" style=" grid-column: span 3">
+        <div class="input-box" style=" grid-column: span 2">
           <label>Description:</label>
           <textarea class="input-info" placeholder="Description" formControlName="description"></textarea>
         </div>

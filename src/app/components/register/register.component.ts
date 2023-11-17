@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
+import {Form, FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {UserService} from "../../public/shared/services/userservice/user.service";
+import {User} from "../../models/User";
 
 @Component({
   selector: 'app-register',
@@ -8,11 +11,27 @@ import {Router} from "@angular/router";
 })
 export class RegisterComponent {
 
-  constructor(private _router:Router) {
+  formRegister:FormGroup
+  constructor(private _router:Router,
+              private _formBuilder:FormBuilder,
+              private _userService:UserService) {
+
+    this.formRegister = this._formBuilder.group({
+      name: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', [Validators.required,Validators.email]],
+      password: ['', Validators.required],
+    });
   }
 
   addUser(){
 
-    this._router.navigate(["/welcome"])
+    if(this.formRegister.valid){
+      this._userService.create(this.formRegister.value).subscribe((data:any)=>{
+        this._userService.automaticLogin(data)
+        this._router.navigate(["/welcome"])
+
+      })
+    }
   }
 }

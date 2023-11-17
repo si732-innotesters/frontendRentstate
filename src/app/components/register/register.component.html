@@ -3,22 +3,22 @@
   <section>
     <h3>REGISTER NOW</h3>
     <p>Already have account? <span routerLink="/login">Login here</span></p>
-    <form (ngSubmit)="addUser()">
+    <form (ngSubmit)="addUser()" [formGroup]="formRegister">
       <div class="input-box">
         <label>Name</label>
-        <input type="text" placeholder="Enter your name here">
+        <input type="text" placeholder="Enter your name here" formControlName="name">
       </div>
       <div class="input-box">
         <label>Last Name</label>
-        <input type="text" placeholder="Enter your last name here">
+        <input type="text" placeholder="Enter your last name here" formControlName="lastName">
       </div>
       <div class="input-box">
         <label>Email</label>
-        <input type="email" placeholder="Enter your email here">
+        <input type="email" placeholder="Enter your email here" formControlName="email">
       </div>
       <div class="input-box">
         <label>Password</label>
-        <input type="password" placeholder="Create your password">
+        <input type="password" placeholder="Create your password" formControlName="password">
       </div>
       <div class="input-box">
         <label>Password</label>

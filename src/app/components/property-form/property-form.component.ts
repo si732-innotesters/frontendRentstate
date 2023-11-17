@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Property} from "../../models/Property";
-import {UserService} from "../../public/shared/services/user.service";
+import {UserService} from "../../public/shared/services/userservice/user.service";
 import {PropertyService} from "../../public/shared/services/property.service";
 import {Router} from "@angular/router";
 

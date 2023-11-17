@@ -4,7 +4,7 @@ import {Property} from "../../models/Property";
 import {PostService} from "../../public/shared/services/post.service";
 import {ActivatedRoute} from "@angular/router";
 import {PropertyService} from "../../public/shared/services/property.service";
-import {UserService} from "../../public/shared/services/user.service";
+import {UserService} from "../../public/shared/services/userservice/user.service";
 import {User} from "../../models/User";
 
 @Component({

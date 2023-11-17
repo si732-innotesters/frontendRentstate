@@ -5,12 +5,18 @@ header{
   flex-direction: column;
   align-items: center;
 }
+.center{
+  display: grid;
+  place-items: center;
+}
+
 img{
   margin: 5px;
 }
 .imgLogo{
   width: 7rem;
 }
+
 #imgMessage{
   width: 2.5rem;
   cursor: pointer;

@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, ElementRef, OnInit} from '@angular/core';
 import {User} from "../../models/User";
-import {UserService} from "../../public/shared/services/user.service";
+import {UserService} from "../../public/shared/services/userservice/user.service";
 
 @Component({
   selector: 'app-see-messages',

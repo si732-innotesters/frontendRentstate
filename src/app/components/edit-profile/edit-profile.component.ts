@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {UserService} from "../../public/shared/services/user.service";
+import {UserService} from "../../public/shared/services/userservice/user.service";
 import {ActivatedRoute} from "@angular/router";
 import {User} from "../../models/User";
 import {ForumAnswer} from "../../models/ForumAnswer";
@@ -60,8 +60,14 @@ export class EditProfileComponent implements OnInit{
 
   updateUser(){
     if(this.formUser.valid){
+      this.user.name = this.formUser.get('name')?.value;
+      this.user.lastName = this.formUser.get('lastName')?.value;
+      this.user.gender = this.formUser.get('gender')?.value;
+      this.user.description = this.formUser.get('description')?.value;
+      this.user.age = this.formUser.get('age')?.value;
+      this.user.photoUrl = this.formUser.get('photoUrl')?.value;
 
-      this._userService.update(this.userId,this.formUser.value).subscribe(()=>{
+      this._userService.update(this.user).subscribe(()=>{
         console.log("Updated")
       })
     }else{

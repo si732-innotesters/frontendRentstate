@@ -9,7 +9,7 @@ import {catchError, retry, throwError} from "rxjs";
 export class BaseService <T>{
 
   basePath:string = `${environment.serverBasePath}`
-  resourceEndPoint: string= `/resources`
+  resourceEndPoint: string= "/api/v1"
 
   httpOptions={
     headers:new HttpHeaders({
@@ -19,8 +19,8 @@ export class BaseService <T>{
   constructor(private _httpClient: HttpClient) {
   }
 
-  private resourcePath():string{
-    console.log("resourcePath "+ `${this.basePath}${this.resourceEndPoint}`)
+  public resourcePath():string{
+    console.log(`${this.basePath}${this.resourceEndPoint}`)
     return `${this.basePath}${this.resourceEndPoint}`
   }
 
@@ -41,8 +41,8 @@ export class BaseService <T>{
     return this._httpClient.delete<T>(`${this.resourcePath()}/${id}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError))
   }
-  update(id:any, item:any){
-    return this._httpClient.put(`${this.resourcePath()}/${id}`, JSON.stringify(item), this.httpOptions)
+  update(item:any){
+    return this._httpClient.put(this.resourcePath(), JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError))
   }
 

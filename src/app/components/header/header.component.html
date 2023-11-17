@@ -1,14 +1,14 @@
 
-<header>
+<header [ngClass]="(idUser)?'':'center'">
   <img src="./assets/images/logo.png" class="imgLogo" routerLink="/home">
 
-  <div class="options">
+  <div class="options" *ngIf="idUser">
     <button routerLink="/list-posts">Posts</button>
     <button routerLink="/forum-questions">Forum</button>
     <span></span>
     <button  routerLink="/add-post" style="background: #67A1DB; margin-right: 20px">Make Post</button>
     <img src="./assets/images/imgMessage.png" id="imgMessage" routerLink="/messages">
-    <img src="./assets/images/imgUser.png" id="imgUser" routerLink="/my-profile/1">
+    <img src="./assets/images/imgUser.png" id="imgUser" routerLink="/my-profile/{{idUser}}">
   </div>
 </header>
 
