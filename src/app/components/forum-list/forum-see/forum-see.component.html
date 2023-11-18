@@ -11,24 +11,24 @@
         <img src="../../../../assets/images/imgUser.png" alt="">
         <div class="answers">
           <a>{{answer.authorName}}</a>
-          <p>{{answer.content}}</p>
+          <p style="font-weight: 500; font-size: 1rem">{{answer.content}}</p>
         </div>
-
+        <span class="space"></span>
+        <span>{{answer.createdAt | date:'shortTime' }}</span>
       </mat-card-content>
     </div>
 
-      <section class="comment">
-        <div class="comment-input">
+    <section class="comment">
+      <div class="comment-input">
           <textarea class="comment-textarea" placeholder="Add a comment..."
                     (input)="onAnswerInput($event)" [(ngModel)]="writtenAnswer"
           ></textarea>
-          <button class="comment-button">
-            <mat-icon
+        <button class="comment-button">
+          <mat-icon
             (click)="addAnswer()"
-            >send</mat-icon>
-          </button>
-        </div>
-      </section>
+          >send</mat-icon>
+        </button>
+      </div>
+    </section>
   </mat-card>
 </div>
-
