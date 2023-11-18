@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Property} from "../../models/Property";
 import {UserService} from "../../public/shared/services/userservice/user.service";
-import {PropertyService} from "../../public/shared/services/property.service";
+import {PropertyService} from "../../public/shared/services/propertyservice/property.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -16,7 +16,8 @@ export class PropertyFormComponent implements OnInit{
 
   constructor(private formBuilder: FormBuilder,
               private _propertyService:PropertyService,
-              private _router:Router) {
+              private _router:Router,
+              private _userService:UserService) {
 
     this.propertyForm = this.formBuilder.group({
       name: ['', Validators.required],
@@ -29,19 +30,21 @@ export class PropertyFormComponent implements OnInit{
     });
 
     this.property = {
-      authorId: 1,
+      authorId: this._userService.getIdUserLoged(),
       name: '',
       urlImg: '',
       description: '',
       characteristics: '',
       location: '',
       category: '',
-      available: false,
-      renterId:4,
+      available: true,
     };
 
   }
 
+  ngOnInit(): void {
+
+  }
   addProperty() {
     if (this.propertyForm.valid) {
 
@@ -57,13 +60,10 @@ export class PropertyFormComponent implements OnInit{
       })
 
     } else {
-      alert("Invalid");
+      alert("Please complete all the fields");
     }
   }
 
 
-  ngOnInit(): void {
 
-
-  }
 }

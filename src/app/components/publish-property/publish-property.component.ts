@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {PropertyService} from "../../public/shared/services/property.service";
+import {PropertyService} from "../../public/shared/services/propertyservice/property.service";
 import {Property} from "../../models/Property";
 import {Route, Router, Routes} from "@angular/router";
 import {PostService} from "../../public/shared/services/post.service";
+import {UserService} from "../../public/shared/services/userservice/user.service";
 
 @Component({
   selector: 'app-publish-property',
@@ -16,6 +17,7 @@ export class PublishPropertyComponent implements OnInit{
 
   postForm: FormGroup;
   constructor(private formBuilder: FormBuilder,
+              private _userService:UserService,
               private _propertyService:PropertyService,
               private _postsService:PostService,
               private _router:Router)
@@ -31,7 +33,7 @@ export class PublishPropertyComponent implements OnInit{
  }
 
  getAllProperties(){
-    this._propertyService.getAll().subscribe({
+    this._propertyService.getAllByAuthorId(this._userService.getIdUserLoged()) .subscribe({
       next:(val:any)=>{
         this.properties=val
 

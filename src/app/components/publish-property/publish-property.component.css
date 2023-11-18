@@ -1,3 +1,8 @@
+.container{
+  display: grid;
+  place-items: center;
+}
+
 .title{
   font-weight: bold;
   text-align: center;
@@ -24,7 +29,7 @@ form{
   margin: 20px auto;
   display: block;
   width: 70%;
-  border-radius: 2rem;
+  border-radius: 30px;
   font-weight: bold;
   color: white;
   font-size: large;
@@ -36,6 +41,21 @@ form{
   transform: scale(1);
 }
 
+.addProperty{
+  border: none;
+  border-radius: 20px;
+  padding: 10px 15px;
+  width: 50%;
+  max-width: 250px;
+  background: #5ab3d5;
+  font-weight: bolder;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+.addProperty:hover{
+  transform: scale(1.06);
+}
 @media (min-width: 720px) {
 
   .form-body {

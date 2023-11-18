@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PostService} from "../../public/shared/services/post.service";
 import {Post} from "../../models/Post";
-import {PropertyService} from "../../public/shared/services/property.service";
+import {PropertyService} from "../../public/shared/services/propertyservice/property.service";
 import {Property} from "../../models/Property";
 
 @Component({

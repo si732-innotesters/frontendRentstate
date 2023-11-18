@@ -3,7 +3,18 @@
   width: 90%;
   margin: auto;
 }
-
+button{
+  border: none;
+  padding: 10px 15px;
+  width: 50%;
+  max-width: 200px;
+  background: #5ab3d5;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+button:hover{
+  transform: scale(1);
+}
 h1 {
   text-align: center;
   color: #002C3E;
