@@ -49,10 +49,11 @@ mat-card-title{
 
 .element{
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   text-align: center;
-  width: 95%;
+  width: 80%;
+  padding: 0 15px;
 }
 .element img{
   align-items: center;
@@ -141,3 +142,4 @@ img{
   background-color: #e16a5a;
   transform: scale(1);
 }
+
