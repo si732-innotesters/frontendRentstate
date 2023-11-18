@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../public/shared/services/userservice/user.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {User} from "../../models/User";
 import {ForumAnswer} from "../../models/ForumAnswer";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {style} from "@angular/animations";
 
 @Component({
   selector: 'app-edit-profile',
@@ -14,7 +15,7 @@ export class EditProfileComponent implements OnInit{
 
   notPhotoProfile:string = "./assets/images/imgUserBlack.png"
 
-  genderOptions = ['','Male', 'Female', 'Other']
+  genderOptions = ['Reserved','Male', 'Female', 'Other']
 
   userId!:number
   user!:User
@@ -22,10 +23,10 @@ export class EditProfileComponent implements OnInit{
 
   showAlert = false
   updatePremium = false
-  cancelPremium = false
 
   constructor(public _userService:UserService,
               private _route:ActivatedRoute,
+              private _router:Router,
               private _formBuild:FormBuilder) {
 
     this._route.params.subscribe(params => {
@@ -50,10 +51,9 @@ export class EditProfileComponent implements OnInit{
     this._userService.getById(this.userId).subscribe((data)=>{
       this.user = data
 
-      if(this.user.photoUrl == ''){
+      if(this.user.photoUrl == '' || this.user.photoUrl==null){
         this.user.photoUrl = this.notPhotoProfile
       }
-
       this.formUser.patchValue(this.user)
     })
   }
@@ -82,6 +82,11 @@ export class EditProfileComponent implements OnInit{
     this.updatePremium=true
   }
 
+  logOut(){
+    this._userService.logOut()
 
+    this._router.navigate(['/login'])
+  }
 
+  protected readonly style = style;
 }

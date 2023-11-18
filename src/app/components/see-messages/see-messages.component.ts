@@ -49,7 +49,7 @@ export class SeeMessagesComponent implements OnInit{
   }
 
   getAllUserChats(){
-    this._messageService.getChatsName(1).subscribe((data:any)=>{
+    this._messageService.getChatsName(this._userService.getIdUserLoged()).subscribe((data:any)=>{
       this.chatsUsers=data
     })
   }

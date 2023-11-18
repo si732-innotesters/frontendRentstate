@@ -1,14 +1,14 @@
 
-<header [ngClass]="(idUser)?'':'center'">
+<header [ngClass]="(isUserLoged())?'':'center'">
   <img src="./assets/images/logo.png" class="imgLogo" routerLink="/home">
 
-  <div class="options" *ngIf="idUser">
+  <div class="options" *ngIf="isUserLoged()">
     <button routerLink="/list-posts">Posts</button>
     <button routerLink="/forum-questions">Forum</button>
     <span></span>
     <button  routerLink="/add-post" style="background: #67A1DB; margin-right: 20px">Make Post</button>
     <img src="./assets/images/imgMessage.png" id="imgMessage" routerLink="/messages">
-    <img src="./assets/images/imgUser.png" id="imgUser" routerLink="/my-profile/{{idUser}}">
+    <img src="./assets/images/imgUser.png" id="imgUser" (click)="goMyProfile() ">
   </div>
 </header>
 

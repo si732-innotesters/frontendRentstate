@@ -1,5 +1,6 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {UserService} from "../../public/shared/services/userservice/user.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -8,16 +9,22 @@ import {UserService} from "../../public/shared/services/userservice/user.service
 })
 export class HeaderComponent implements OnInit{
 
-  idUser!:number
+
 
   constructor(private _userService:UserService,
+              private _router:Router,
               ) {
 
   }
 
   ngOnInit(): void {
-    this.idUser = this._userService.getIdUserLoged()
+
   }
 
-
+  isUserLoged(){
+    return this._userService.isLoged();
+  }
+  goMyProfile(){
+    this._router.navigate([`/my-profile/${this._userService.getIdUserLoged()}`])
+  }
 }
