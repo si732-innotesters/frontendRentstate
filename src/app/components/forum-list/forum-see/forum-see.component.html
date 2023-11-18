@@ -9,14 +9,23 @@
     <div class="container">
       <mat-card-content *ngFor="let answer of answers">
         <img src="../../../../assets/images/imgUser.png" alt="">
-        <a>{{answer.content}}</a>
+        <div class="answers">
+          <a>{{answer.authorName}}</a>
+          <p>{{answer.content}}</p>
+        </div>
+
       </mat-card-content>
     </div>
+
       <section class="comment">
         <div class="comment-input">
-          <textarea class="comment-textarea" placeholder="Add a comment..."></textarea>
+          <textarea class="comment-textarea" placeholder="Add a comment..."
+                    (input)="onAnswerInput($event)" [(ngModel)]="writtenAnswer"
+          ></textarea>
           <button class="comment-button">
-            <mat-icon>send</mat-icon>
+            <mat-icon
+            (click)="addAnswer()"
+            >send</mat-icon>
           </button>
         </div>
       </section>

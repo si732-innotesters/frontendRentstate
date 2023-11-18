@@ -47,16 +47,6 @@ img{
   width: 3.5rem;
   margin-right: 1rem;
 }
-a{
-  text-align: center;
-  font-weight: 500;
-  font-size: 0.9rem;
-}
-a:hover{
-  text-decoration: underline;
-  cursor: pointer;
-  font-weight: 600;
-}
 
 .comment {
   display: flex;
@@ -100,7 +90,14 @@ a:hover{
 .comment-button:active {
   transform: scale(0.8);
 }
-
+.answers{
+  display: flex;
+  flex-direction: column;
+}
+.answers a{
+  font-weight: bolder;
+  margin-bottom: 5px;
+}
 
 
 

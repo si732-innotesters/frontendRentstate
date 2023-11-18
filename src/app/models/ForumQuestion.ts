@@ -1,5 +1,6 @@
 export interface ForumQuestion {
-  id: number;
+  id?: number;
   authorId: number;
   question: string;
+  createdAt?:Date;
 }

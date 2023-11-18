@@ -11,7 +11,9 @@
      <mat-card-content *ngFor="let question of forumQuestions">
        <div class="element">
          <img src="assets/images/imgUser.png" alt="">
-         <a routerLink="/forum-answer/{{question.id}}">{{question.question}}></a>
+         <a routerLink="/forum-answer/{{question.id}}">
+           {{question.question}}
+         </a>
        </div>
      </mat-card-content>
    </div>
@@ -23,8 +25,10 @@
       <h2>Ask your question</h2>
     </div>
     <div class="forum-body">
-      <textarea class="question-textarea" placeholder="Type your question here"></textarea>
-      <button class="publish-button" (click)="changeIsAddQuestion()">Publish</button>
+      <textarea class="question-textarea" placeholder="Type your question here"
+                (input)="onQuestionInput($event)" [(ngModel)]="writtenQuestion"></textarea>
+      <button class="button publish " (click)="addQuestion()">Publish</button>
+      <button class="button cancel" (click)="changeIsAddQuestion()">Cancel</button>
     </div>
   </section>
 
