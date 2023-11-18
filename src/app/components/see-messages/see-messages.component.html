@@ -3,7 +3,7 @@
   <section class="chats">
     <h2>Your Chats</h2>
     <div class="chat-box">
-      <button *ngFor=" let user of chatsUsers" (click)="changeNameChat(user.name +' '+ user.lastName)"
+      <button *ngFor=" let user of chatsUsers" (click)="changeNameChat(user)"
               [ngClass]="(user.name +' '+ user.lastName == nameChat)?'selected':'ok'">
         {{user.name}} {{user.lastName}}
       </button>
@@ -13,11 +13,15 @@
   <section class="message-section">
     <h3>{{nameChat}}</h3>
     <div class="messages">
-      <app-chats></app-chats>
+      <app-chats
+        [chatsInput] = chatsMessage
+      ></app-chats>
     </div>
     <div class="input-message">
-      <textarea></textarea>
-      <mat-icon>send</mat-icon>
+      <textarea
+        (input)="onMessageInput($event)" [(ngModel)]="writtenMessage"
+      ></textarea>
+      <mat-icon (click)="sendMessage()">send</mat-icon>
     </div>
   </section>
 

@@ -20,10 +20,12 @@
   align-self: flex-end;
 }
 .received {
-  background-color: #484A4C;
+  background-color: #73757e;
   align-self: flex-start;
 }
-
+span{
+    font-size: 9px;
+}
 @media (min-width: 720px) {
   .content{
     font-size: 0.9rem;

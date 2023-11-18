@@ -13,8 +13,7 @@ export class UserService extends BaseService<User>{
     this.resourceEndPoint = this.resourceEndPoint + '/users';
   }
   public login(credentials:any){
-    this.resourceEndPoint ='/api/v1/users/login'
-    return this._http.post(this.resourcePath(),credentials);
+    return this._http.post(`${this.resourcePath()}/login`,credentials);
   }
 
   addUserIdLocalStore(id:Number){

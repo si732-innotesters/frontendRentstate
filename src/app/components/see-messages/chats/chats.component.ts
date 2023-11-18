@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {MessageService} from "../../../public/shared/services/message.service";
+import {Component, Input, OnInit, Output} from '@angular/core';
+import {MessageService} from "../../../public/shared/services/messageservice/message.service";
+import {Message} from "../../../models/Message";
 
 @Component({
   selector: 'app-chats',
@@ -11,13 +12,17 @@ export class ChatsComponent implements OnInit{
 
   userLogedId = 1
 
-  chats:any=[]
+  //chats:Message[]=[]
+
+  @Input()chatsInput!: Message[]
+
+
   constructor(private _messageService:MessageService) {
   }
 
   ngOnInit(): void {
-    this._messageService.getChats("EmilyBrown").subscribe((data)=>{
-      this.chats = data
-    })
+
   }
+
+
 }

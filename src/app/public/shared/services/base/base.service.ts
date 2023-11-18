@@ -20,7 +20,7 @@ export class BaseService <T>{
   }
 
   public resourcePath():string{
-    console.log(`${this.basePath}${this.resourceEndPoint}`)
+    console.log( `${this.basePath}${this.resourceEndPoint}`)
     return `${this.basePath}${this.resourceEndPoint}`
   }
 
