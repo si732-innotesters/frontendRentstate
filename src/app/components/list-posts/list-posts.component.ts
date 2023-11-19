@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {PostService} from "../../public/shared/services/post.service";
+import {PostService} from "../../public/shared/services/postservice/post.service";
 import {Post} from "../../models/Post";
 import {PropertyService} from "../../public/shared/services/propertyservice/property.service";
 import {Property} from "../../models/Property";
@@ -11,7 +11,6 @@ import {Property} from "../../models/Property";
 })
 export class ListPostsComponent implements  OnInit{
 
-  properties:Property[]=[]
   posts: Post[] = []
   postsCopy: Post[] = [];
   category:string=''
@@ -21,10 +20,8 @@ export class ListPostsComponent implements  OnInit{
               private _propertyService:PropertyService) {
 
   }
-
   ngOnInit(): void {
     this.getAllPosts()
-    this.getAllProperties()
   }
 
   getAllPosts() {
@@ -36,33 +33,18 @@ export class ListPostsComponent implements  OnInit{
     });
   }
 
-  getAllProperties(){
-    this._propertyService.getAll().subscribe({
-      next:(val:any)=>{
-        this.properties = val
-      }
-    })
-  }
-
-  getPropertyById(propertyId: number): Property | undefined {
-    return this.properties.find(property => property.id === propertyId);
-  }
-
-
   selectCategory(newCategory: string) {
     this.posts = this.postsCopy
     if (this.category === newCategory) {
-      this.category = '';
+      this.category = ''
+      return
     } else {
       this.category = newCategory;
     }
 
-    if (this.category != '') {
-      this.posts = this.postsCopy.filter(post => {
-        const property = this.properties.find(property => property.id === post.propertyId);
-        return property && property.category === this.category;
-      });
-    }
+    this.posts = this.posts.filter(post => {
+      return post.property.category === this.category
+    });
   }
   applyFilter(event: Event) {
     this.posts = this.postsCopy

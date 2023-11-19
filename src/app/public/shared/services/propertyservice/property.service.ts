@@ -18,4 +18,5 @@ export class PropertyService extends BaseService<Property>{
     return  this._http.get(`${this.resourcePath()}/author/${id}`)
   }
 
+
 }

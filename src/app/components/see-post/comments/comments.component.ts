@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {CommentPost} from "../../../models/CommentPost";
 
 @Component({
   selector: 'app-comments',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class CommentsComponent {
 
+  @Input() comments: CommentPost[] = [];
 }

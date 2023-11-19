@@ -2,10 +2,19 @@
 <div class="container" *ngIf="user">
   <section class="profile">
     <div class="user">
-      <div class="photoUser">
+      <div class="photoUser" style="background-image: url({{user.photoUrl}})">
         <label *ngIf="user.isPremium">Premium</label>
       </div>
-      <p>⭐⭐⭐⭐⭐</p>
+
+      <div class="star-container">
+        <ng-container *ngIf="user">
+          <ng-container *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
+            <mat-icon class="star" [ngClass]="{'gold-star': user.rankPoints !== undefined && i < user.rankPoints}">star</mat-icon>
+          </ng-container>
+        </ng-container>
+      </div>
+
+
     </div>
 
     <div class="info">
@@ -20,23 +29,29 @@
   </section>
 
   <section class="qualify">
-      <label>Rate this user's profile</label>
-      <p>⭐⭐⭐⭐⭐</p>
-      <button>Qualify</button>
+    <label>Rate this user's profile</label>
+    <p>
+          <span *ngFor="let star of stars; let i = index">
+            <span [ngClass]="{'selected': i < selectedStars}" (click)="selectStars(i+1)"> <mat-icon>star</mat-icon> </span>
+          </span>
+    </p>
+    <button (click)="saveStars()">Qualify</button>
   </section>
 
 </div>
 
-  <section class="send-message" *ngIf="user">
+  <section class="send-message" *ngIf="sendMessage">
     <h2>Send Message</h2>
     <div class="message-box">
       <label>To: {{user.lastName}} {{user.name}}</label>
       <div class="message">
         <label>Write message:</label>
-        <textarea id="message"></textarea>
+        <textarea id="message"
+                  (input)="onMessageInput($event)" [(ngModel)]="writingMessage"
+        ></textarea>
       </div>
       <div class="buttons">
-        <button class="send-button" (click)="changeSendMessage()"> <mat-icon>send</mat-icon> </button>
+        <button class="send-button" (click)="addMessage()"> <mat-icon>send</mat-icon> </button>
         <button class="send-button " (click)="changeSendMessage()" style="background: #DB6767"> X </button>
       </div>
     </div>

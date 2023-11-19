@@ -1,11 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {Post} from "../../models/Post";
-import {Property} from "../../models/Property";
-import {PostService} from "../../public/shared/services/post.service";
+import {PostService} from "../../public/shared/services/postservice/post.service";
 import {ActivatedRoute} from "@angular/router";
-import {PropertyService} from "../../public/shared/services/propertyservice/property.service";
+import {CommentPost} from "../../models/CommentPost";
+import {Message} from "../../models/Message";
 import {UserService} from "../../public/shared/services/userservice/user.service";
-import {User} from "../../models/User";
 
 @Component({
   selector: 'app-see-post',
@@ -13,14 +12,14 @@ import {User} from "../../models/User";
   styleUrls: ['./see-post.component.css']
 })
 export class SeePostComponent implements OnInit{
+
   post !:Post
-  property !: Property
-  user !:User
+  comments:CommentPost[]=[]
+  writtenComment:string=""
 
   constructor(private _postService: PostService,
-              private _propertyService: PropertyService,
-              private _userService:UserService,
-              private route:ActivatedRoute) {
+              private route:ActivatedRoute,
+              private _userService:UserService) {
   }
 
   ngOnInit(): void {
@@ -30,24 +29,40 @@ export class SeePostComponent implements OnInit{
   getPost(){
     this.route.paramMap.subscribe(params => {
       const postId = Number(params.get('id'));
+
       this._postService.getById(postId).subscribe((data)=>{
         this.post = data
 
-        this.getProperty()
       });
-    });
-  }
-  getProperty(){
-      this._propertyService.getById(this.post.propertyId).subscribe((data)=>{
-        this.property = data
-        this.getUser()
+
+      this.getAllCommentsByPostId(postId)
 
     });
   }
 
-  getUser(){
-    this._userService.getById (this.property.authorId).subscribe((data)=>{
-      this.user= data
+  getAllCommentsByPostId(id:number){
+    this._postService.getAllCommentsByPostId(id).subscribe((data:any)=>{
+      this.comments=data
     })
   }
+
+
+  onCommentInput(event: any): void {
+    this.writtenComment = event.target.value;
+  }
+  addComment(): void {
+    if(this.writtenComment != "") {
+      var newComment: CommentPost = {
+        authorId: this._userService.getIdUserLoged(),
+        postId: this.post.id,
+        content: this.writtenComment.toString(),
+      }
+
+      this._postService.addComment(newComment).subscribe((data: any) => {
+        this.writtenComment = ""
+        this.comments.push(data)
+      })
+    }
+  }
+
 }

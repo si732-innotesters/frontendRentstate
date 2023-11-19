@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {PropertyService} from "../../public/shared/services/propertyservice/property.service";
 import {Property} from "../../models/Property";
-import {Route, Router, Routes} from "@angular/router";
-import {PostService} from "../../public/shared/services/post.service";
+import {Router} from "@angular/router";
+import {PostService} from "../../public/shared/services/postservice/post.service";
 import {UserService} from "../../public/shared/services/userservice/user.service";
 
 @Component({
@@ -47,7 +47,8 @@ export class PublishPropertyComponent implements OnInit{
  addPost(){
     if(this.postForm.valid){
       this._postsService.create(this.postForm.value).subscribe(()=>{
-        console.log("Post Added")
+        alert("Post Added")
+        this._router.navigate(['/list-posts'])
       })
     }else{
       alert("Invalid")

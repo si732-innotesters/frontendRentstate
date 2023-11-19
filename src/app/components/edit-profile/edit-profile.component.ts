@@ -68,7 +68,7 @@ export class EditProfileComponent implements OnInit{
       this.user.photoUrl = this.formUser.get('photoUrl')?.value;
 
       this._userService.update(this.user).subscribe(()=>{
-        console.log("Updated")
+        this._router.navigate(['/list-posts'])
       })
     }else{
       this.showAlert = true;

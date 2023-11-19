@@ -17,13 +17,13 @@
 <div class="posts">
   <ng-container *ngFor="let post of posts">
     <div class="card-content">
-      <div class="imgPost" style="background-image: url({{getPropertyById(post.propertyId)?.urlImg}})">
-        <span>{{getPropertyById(post.propertyId)?.category}}</span>
+      <div class="imgPost" style="background-image: url({{post.property.urlImg}})">
+        <span>{{post.property.category}}</span>
       </div>
       <div class="text-container">
         <mat-card-title class="title">{{ post.title }}</mat-card-title>
         <mat-card-subtitle class="price">$ {{ post.price }}</mat-card-subtitle>
-        <mat-card-subtitle class="description">{{getPropertyById(post.propertyId)?.description}}</mat-card-subtitle>
+        <mat-card-subtitle class="description">{{post.property.description}}</mat-card-subtitle>
         <mat-card-actions class="card-actions">
           <button class="open-new" routerLink="/see-post/{{post.id}}">Show more</button>
         </mat-card-actions>

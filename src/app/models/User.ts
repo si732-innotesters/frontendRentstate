@@ -7,4 +7,5 @@ export interface User {
   description: string;
   isPremium: boolean;
   photoUrl:string
+  rankPoints?:number
 }

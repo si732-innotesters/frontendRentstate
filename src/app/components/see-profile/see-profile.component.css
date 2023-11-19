@@ -8,10 +8,30 @@
   flex-direction: column;
   align-items: center;
 }
-.photoUser{
+.star-container {
+  display: inline-block;
+}
+
+.star {
+  font-size: 24px;
+  margin-right: 4px;
+}
+
+.gold-star {
+  color: gold;
+}
+span {
+  cursor: pointer;
+  transition: 0s;
+}
+
+span.selected {
+  color: gold;
+}
+
+.photoUser {
   width: 120px;
   height: 120px;
-  background-image:url("https://cdn-icons-png.flaticon.com/512/1144/1144760.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

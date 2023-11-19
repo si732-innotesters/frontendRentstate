@@ -16,6 +16,11 @@ export class UserService extends BaseService<User>{
     return this._http.post(`${this.resourcePath()}/login`,credentials);
   }
 
+  addRating(item:any){
+    console.log(item)
+    return this._http.post("http://localhost:8080/api/v1/ratings", item)
+  }
+
   addUserIdLocalStore(id:Number){
     window.sessionStorage.setItem('userLogedId', id.toString());
   }

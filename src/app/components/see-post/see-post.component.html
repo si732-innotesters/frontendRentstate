@@ -1,17 +1,19 @@
-<section class="container" *ngIf="user">
+<section class="container" *ngIf="post">
   <section class="post">
     <h2>{{post.title}}</h2>
     <div class="post-box">
       <div class="name">
         <div class="imgPost">
-          <span>{{property.category}}</span>
+          <span>{{post.property.category}}</span>
         </div>
-        <p><a href="see-profile/{{property.authorId}}">{{user.name}} {{user.lastName}}</a></p>
+        <p>
+          <a href="see-profile/{{post.property.authorId}}">{{post.author.name}} {{post.author.lastName}}</a>
+        </p>
       </div>
 
       <div class="post-info">
-        <p id="description">{{property.description}}</p>
-        <p id="characteristics">{{property.characteristics}}</p>
+        <p id="description">{{post.property.description}}</p>
+        <p id="characteristics">{{post.property.characteristics}}</p>
         <button id="reserve">Reserve</button>
         <span></span>
         <button id="price">$  {{post.price}}</button>
@@ -20,17 +22,21 @@
     </div>
   </section>
 
-  <section class="section-comment">
+  <section class="section-comment" *ngIf="comments">
     <section class="comment-box">
       <label>Comments</label>
       <div class="comment">
-        <app-comments></app-comments>
+        <app-comments
+          [comments]="comments"
+        ></app-comments>
       </div>
     </section>
 
     <section class="write-comment">
-      <textarea></textarea>
-      <button> <mat-icon>send</mat-icon>  </button>
+      <textarea
+        (input)="onCommentInput($event)" [(ngModel)]="writtenComment"
+      ></textarea>
+      <button (click)="addComment()"> <mat-icon>send</mat-icon>  </button>
     </section>
   </section>
 </section>
