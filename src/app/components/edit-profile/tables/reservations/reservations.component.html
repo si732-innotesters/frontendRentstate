@@ -1,0 +1,21 @@
+<div class="table-container">
+  <table>
+    <thead>
+    <tr>
+      <th>Person Name</th>
+      <th>Property</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let reservation of reservations">
+      <td>{{reservation.author.name}} {{reservation.author.lastName}}</td>
+      <td>{{reservation.property.name}}</td>
+      <td>
+        <button class="btn-aceptar">Aceptar</button>
+        <button class="btn-rechazar">Rechazar</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

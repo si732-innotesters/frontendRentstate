@@ -1,5 +1,7 @@
+import {User} from "./User";
+
 export interface Property {
-  id?: number;
+  id: number;
   authorId: number;
   name: string;
   urlImg:string;
@@ -8,5 +10,8 @@ export interface Property {
   location: string;
   category: string;
   available: boolean;
+  isPosted:boolean;
+  reservedUsers:User[]
   renterId?: number;
+
 }

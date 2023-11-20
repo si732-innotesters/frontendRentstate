@@ -1,5 +1,7 @@
+import {Property} from "./Property";
+import {User} from "./User";
+
 export interface Reservation {
-  id: number;
-  authorId: number;
-  propertyId: number;
+  author: User;
+  property: Property;
 }

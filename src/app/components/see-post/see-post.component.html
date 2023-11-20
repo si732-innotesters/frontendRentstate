@@ -14,7 +14,9 @@
       <div class="post-info">
         <p id="description">{{post.property.description}}</p>
         <p id="characteristics">{{post.property.characteristics}}</p>
-        <button id="reserve">Reserve</button>
+        <button id="reserve" (click)="changeReservation(post.property.id)"
+
+        >{{reservedByUserLoged?'Cancel Reserve':'Reserve'}}</button>
         <span></span>
         <button id="price">$  {{post.price}}</button>
       </div>

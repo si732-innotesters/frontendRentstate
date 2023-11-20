@@ -1,15 +1,39 @@
-<div class="container">
-  <h1>Your Properties</h1>
+<div class="card-container">
+  <div class="card" *ngFor="let post of posts">
+    <img src="{{post.property.urlImg}}" alt="Card Image">
+    <div class="card-content">
+      <div class="card-title" *ngIf="!post.editMode">Post title: {{post.title}}</div>
+      <div class="card-price" *ngIf="!post.editMode">${{post.price}}</div>
+      <div class="card-category" *ngIf="!post.editMode">Property name: {{post.property.name}}</div>
 
-  <table>
-    <tr>
-      <th>Title</th>
-      <th>Price</th>
-    </tr>
+      <div *ngIf="post.editMode" class="edit-form">
+        <label>Title</label>
+        <input [(ngModel)]="post.title" placeholder="Edit Title">
+        <label>Price</label>
+        <input [(ngModel)]="post.price" placeholder="Edit Price">
+      </div>
 
-    <tr *ngFor="let post of posts">
-      <td>{{post.title}}</td>
-      <td>{{post.price}}</td>
-    </tr>
-  </table>
+    </div>
+
+    <div class="card-buttons">
+      <button class="edit-button" (click)="activeEditMode(post)"
+              *ngIf="!post.editMode"
+      >Edit</button>
+      <button class="edit-button" (click)="updatePost(post)"
+              *ngIf="post.editMode"
+      >Update</button>
+      <button class="delete-button"
+              (click)="deletePost(post.id)"
+              *ngIf="!post.editMode"
+              style="background: #ff1e00"
+      >Delete</button>
+      <button class="delete-button"
+              (click)="cancelEdit(post)"
+              *ngIf="post.editMode"
+              style="background: #DB6767"
+      >Cancel</button>
+    </div>
+  </div>
 </div>
+
+<h1 *ngIf="posts.length == 0">You don't have any publications</h1>

@@ -15,6 +15,10 @@ export class PostService extends BaseService<Post>{
     this.resourceEndPoint='/api/v1/posts'
   }
 
+  getPostsByAuthorId(id:number){
+    return this._http.get(`${this.resourcePath()}/author-id/${id}`)
+  }
+
   getAllCommentsByPostId(id:number){
     return  this._http.get(`${this.resourcePath()}/comment/post-id/${id}`)
   }

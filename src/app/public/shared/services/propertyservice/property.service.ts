@@ -18,5 +18,14 @@ export class PropertyService extends BaseService<Property>{
     return  this._http.get(`${this.resourcePath()}/author/${id}`)
   }
 
+  addReservation(propertyId: number, userId: number) {
+    return this._http.post(
+      `${this.resourcePath()}/reservation/property-id/${propertyId}/user-id/${userId}/add`,'')
+  }
+
+  removeReservation(propertyId:number, userId:number){
+    return  this._http.post(
+      `${this.resourcePath()}/reservation/property-id/${propertyId}/user-id/${userId}/remove`,'')
+  }
 
 }

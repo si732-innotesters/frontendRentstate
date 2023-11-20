@@ -5,6 +5,7 @@ import {ActivatedRoute} from "@angular/router";
 import {CommentPost} from "../../models/CommentPost";
 import {Message} from "../../models/Message";
 import {UserService} from "../../public/shared/services/userservice/user.service";
+import {PropertyService} from "../../public/shared/services/propertyservice/property.service";
 
 @Component({
   selector: 'app-see-post',
@@ -16,29 +17,35 @@ export class SeePostComponent implements OnInit{
   post !:Post
   comments:CommentPost[]=[]
   writtenComment:string=""
+  reservedByUserLoged:boolean=false
 
   constructor(private _postService: PostService,
               private route:ActivatedRoute,
-              private _userService:UserService) {
+              private _userService:UserService,
+              private _propertyService:PropertyService) {
   }
 
   ngOnInit(): void {
     this.getPost()
   }
 
-  getPost(){
+  getPost() {
     this.route.paramMap.subscribe(params => {
       const postId = Number(params.get('id'));
 
-      this._postService.getById(postId).subscribe((data)=>{
-        this.post = data
+      this._postService.getById(postId).subscribe((data) => {
+        this.post = data;
+
+        const userLogedId = this._userService.getIdUserLoged();
+
+        this.reservedByUserLoged = this.post.property.reservedUsers.some(user => user.id === userLogedId);
 
       });
 
-      this.getAllCommentsByPostId(postId)
-
+      this.getAllCommentsByPostId(postId);
     });
   }
+
 
   getAllCommentsByPostId(id:number){
     this._postService.getAllCommentsByPostId(id).subscribe((data:any)=>{
@@ -46,6 +53,19 @@ export class SeePostComponent implements OnInit{
     })
   }
 
+  changeReservation(propertyId:number){
+    if(this.reservedByUserLoged){
+      this._propertyService.removeReservation(propertyId,this._userService.getIdUserLoged()).subscribe(()=>{
+        alert("Your reservation was canceled")
+        this.reservedByUserLoged = false
+      })
+    }else{
+      this._propertyService.addReservation(propertyId,this._userService.getIdUserLoged()).subscribe(()=>{
+        alert("You reserved this property")
+        this.reservedByUserLoged = true
+      })
+    }
+  }
 
   onCommentInput(event: any): void {
     this.writtenComment = event.target.value;

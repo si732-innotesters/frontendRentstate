@@ -1,9 +1,9 @@
-
-
 <div class="container">
   <h1>Your Properties</h1>
   <button routerLink="/register-property">Add Property</button>
+
   <table>
+    <thead>
     <tr>
       <th>Image</th>
       <th>Title</th>
@@ -11,17 +11,21 @@
       <th>Available</th>
       <th>Actions</th>
     </tr>
-
+    </thead>
+    <tbody>
     <tr *ngFor="let property of properties">
-      <td class="imgProperty"><img src="{{property.urlImg}}" alt="Image"></td>
-      <td>{{property.description}}</td>
-      <td>{{property.category}}</td>
-      <td>{{property.available ? 'Yes' : 'No'}}</td>
-      <td>
-        <mat-icon>edit</mat-icon>
-        <mat-icon>delete</mat-icon>
+      <td class="imgProperty">
+        <img [src]="property.urlImg" alt="Property Image">
+      </td>
+      <td>{{ property.description }}</td>
+      <td>{{ property.category }}</td>
+      <td>{{ property.available ? 'Yes' : 'No' }}</td>
+      <td class="actions">
+          <mat-icon (click)="deletePropertyById(property.id)"
+                    *ngIf="!property.isPosted"
+          >delete</mat-icon>
       </td>
     </tr>
+    </tbody>
   </table>
 </div>
-

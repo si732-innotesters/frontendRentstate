@@ -18,8 +18,18 @@ export class YourPropertiesComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    this.getMyProperties()
+  }
+
+  getMyProperties(){
     this._propertyService.getAllByAuthorId(this._userService.getIdUserLoged()).subscribe((data:any)=>{
       this.properties = data;
+    })
+  }
+  deletePropertyById(id:number){
+    this._propertyService.delete(id).subscribe(()=>{
+      this.getMyProperties()
+      alert("Property deleted")
     })
   }
 

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Host, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Property} from "../../models/Property";
 import {UserService} from "../../public/shared/services/userservice/user.service";
@@ -12,12 +12,12 @@ import {Router} from "@angular/router";
 })
 export class PropertyFormComponent implements OnInit{
   propertyForm: FormGroup;
-  property!:Property
+  property:Property
 
   constructor(private formBuilder: FormBuilder,
               private _propertyService:PropertyService,
               private _router:Router,
-              private _userService:UserService) {
+              private _userService:UserService,) {
 
     this.propertyForm = this.formBuilder.group({
       name: ['', Validators.required],
@@ -30,6 +30,7 @@ export class PropertyFormComponent implements OnInit{
     });
 
     this.property = {
+      id:0,
       authorId: this._userService.getIdUserLoged(),
       name: '',
       urlImg: '',
@@ -38,12 +39,12 @@ export class PropertyFormComponent implements OnInit{
       location: '',
       category: '',
       available: true,
+      reservedUsers:[],
+      isPosted:false,
     };
-
   }
 
   ngOnInit(): void {
-
   }
   addProperty() {
     if (this.propertyForm.valid) {
