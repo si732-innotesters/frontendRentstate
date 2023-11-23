@@ -27,12 +27,17 @@ export class LoginComponent implements OnInit{
   }
 
   login(){
-    this._userService.login(this.loginForm.value).subscribe((data)=>{
-      this._userService.automaticLogin(data)
 
-      this._router.navigate(['/welcome'])
+    console.log(this.loginForm.value)
+    if(this.loginForm.valid){
+      this._userService.login(this.loginForm.value).subscribe((data)=>{
+        this._userService.automaticLogin(data)
 
-    })
+        this._router.navigate(['/welcome'])
+      })
+    }else {
+      alert("Complete the form correctly")
+    }
   }
 
 }

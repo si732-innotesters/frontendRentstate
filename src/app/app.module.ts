@@ -24,7 +24,7 @@ import { SeeProfileComponent } from './components/see-profile/see-profile.compon
 import { ChatsComponent } from './components/see-messages/chats/chats.component';
 import {HttpClientModule} from "@angular/common/http";
 import { SeeMessagesComponent } from './components/see-messages/see-messages.component';
-import { PropertyFormComponent } from './components/property-form/property-form.component';
+import { PropertyFormComponent } from './components/edit-profile/tables/your-properties/property-form/property-form.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatSelectModule} from "@angular/material/select";
 import { PublishPropertyComponent } from './components/publish-property/publish-property.component';

@@ -12,8 +12,12 @@
       <td>{{reservation.author.name}} {{reservation.author.lastName}}</td>
       <td>{{reservation.property.name}}</td>
       <td>
-        <button class="btn-aceptar">Aceptar</button>
-        <button class="btn-rechazar">Rechazar</button>
+        <button class="btn-aceptar"
+                (click)="acceptReservation(reservation.property.id, reservation.author.id)"
+        >Accept</button>
+        <button class="btn-rechazar"
+                (click)="cancelReservation(reservation.property.id, reservation.author.id)"
+        >Decline </button>
       </td>
     </tr>
     </tbody>

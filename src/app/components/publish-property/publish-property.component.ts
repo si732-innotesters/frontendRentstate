@@ -32,17 +32,18 @@ export class PublishPropertyComponent implements OnInit{
     this.getAllProperties()
  }
 
- getAllProperties(){
-    this._propertyService.getAllByAuthorId(this._userService.getIdUserLoged()) .subscribe({
-      next:(val:any)=>{
-        this.properties=val
+  getAllProperties() {
+    this._propertyService.getAllByAuthorId(this._userService.getIdUserLoged()).subscribe({
+      next: (val: any) => {
+        this.properties = val;
+        this.properties = this.properties.filter(property => !property.isPosted && property.available);
 
-        if(this.properties.length == 0){
-            this._router.navigate(['/register-property'])
+        if (this.properties.length === 0) {
+          this._router.navigate(['/register-property']);
         }
-      }
-    })
- }
+      },
+    });
+  }
 
  addPost(){
     if(this.postForm.valid){

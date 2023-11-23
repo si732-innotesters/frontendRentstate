@@ -1,5 +1,5 @@
 
-<h1 class="title">Register your property</h1>
+<h1 class="title">{{editMode?'Edit':'Add'}} your property</h1>
 <form (ngSubmit)="addProperty()" [formGroup]="propertyForm">
 
   <div class="form-body">
@@ -47,15 +47,22 @@
     <mat-form-field appearance="outline" class="form-field available">
       <mat-label>Available</mat-label>
       <mat-select formControlName="available">
-        <mat-option value="true">Yes</mat-option>
-        <mat-option value="false">No</mat-option>
+        <mat-option [value]="true">Yes</mat-option>
+        <mat-option [value]="false">No</mat-option>
       </mat-select>
       <mat-icon matSuffix>check</mat-icon>
     </mat-form-field>
   </div>
-
-  <button type="submit" class="button-save">Save</button>
-
+<div style="display: flex;">
+  <button type="submit" class="button-save">
+    {{editMode?'Edit':'Add'}}
+  </button>
+  <button style="background: #DB6767"
+          class="button-save"
+          (click)="cancelEdit.emit(false)"
+  >Cancel
+  </button>
+</div>
 </form>
 
 

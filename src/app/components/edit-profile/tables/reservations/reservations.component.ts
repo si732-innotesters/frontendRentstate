@@ -19,10 +19,11 @@ export class ReservationsComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.getMyReservationByPorperties()
+    this.getMyReservations()
   }
 
-  getMyReservationByPorperties() {
+  getMyReservations() {
+    this.reservations=[]
     this._propertyService.getAllByAuthorId(this._userService.getIdUserLoged()).subscribe((data: any) => {
       this.properties = data;
 
@@ -37,5 +38,15 @@ export class ReservationsComponent implements OnInit{
     });
   }
 
+  cancelReservation(propertyId: number, authorId: number) {
+    this._propertyService.removeReservation(propertyId, authorId).subscribe(() => {
+      this.reservations = this.reservations.filter(reservation => reservation.author.id !== authorId);
+    });
+  }
 
+  acceptReservation(propertyId: number, authorId: number) {
+    this._propertyService.acceptReservation(propertyId,authorId).subscribe(()=>{
+      this.getMyReservations();
+    })
+  }
 }

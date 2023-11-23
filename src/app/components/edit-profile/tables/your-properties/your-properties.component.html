@@ -1,12 +1,26 @@
 <div class="container">
+
+  <section *ngIf="showForm">
+    <app-property-form
+      [editMode]="edit"
+      [property]="propertyToEdit"
+      (cancelEdit)="cancelEdit($event)"
+      (editProperty)="editProperty($event)"
+
+    ></app-property-form>
+  </section>
+
   <h1>Your Properties</h1>
-  <button routerLink="/register-property">Add Property</button>
+  <button
+    *ngIf="!showForm"
+    (click)="showFormProperty()"
+  >Add Property</button>
 
   <table>
     <thead>
     <tr>
       <th>Image</th>
-      <th>Title</th>
+      <th>Name</th>
       <th>Category</th>
       <th>Available</th>
       <th>Actions</th>
@@ -17,15 +31,25 @@
       <td class="imgProperty">
         <img [src]="property.urlImg" alt="Property Image">
       </td>
-      <td>{{ property.description }}</td>
+      <td>{{ property.name }}</td>
       <td>{{ property.category }}</td>
-      <td>{{ property.available ? 'Yes' : 'No' }}</td>
-      <td class="actions">
-          <mat-icon (click)="deletePropertyById(property.id)"
-                    *ngIf="!property.isPosted"
-          >delete</mat-icon>
+      <td class="editable" (click)="editAvailability(property)">
+        <select [(ngModel)]="property.available">
+          <option [ngValue]="true">Yes</option>
+          <option [ngValue]="false">No</option>
+        </select>
+      </td>
+
+      <td>
+        <button class="btn-aceptar"
+          (click)="onEditMode(property)"
+        >Edit</button>
+        <button class="btn-rechazar"
+                (click)="deletePropertyById(property.id)" *ngIf="!property.isPosted"
+        >Delete</button>
       </td>
     </tr>
     </tbody>
   </table>
+
 </div>

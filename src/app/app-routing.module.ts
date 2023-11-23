@@ -11,7 +11,7 @@ import {ForumSeeComponent} from "./components/forum-list/forum-see/forum-see.com
 import {PublishPropertyComponent} from "./components/publish-property/publish-property.component";
 import {SeeMessagesComponent} from "./components/see-messages/see-messages.component";
 import {SeeProfileComponent} from "./components/see-profile/see-profile.component";
-import {PropertyFormComponent} from "./components/property-form/property-form.component";
+import {PropertyFormComponent} from "./components/edit-profile/tables/your-properties/property-form/property-form.component";
 import {LoginComponent} from "./components/login/login.component";
 import {
   YourPropertiesComponent
