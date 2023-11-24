@@ -37,8 +37,7 @@ export class YourPropertiesComponent implements OnInit{
   }
   deletePropertyById(id:number){
     this._propertyService.delete(id).subscribe(()=>{
-      this.properties.filter(property=>property.id !=id)
-
+      this.getMyProperties()
     })
   }
 

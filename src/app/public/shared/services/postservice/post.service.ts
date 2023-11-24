@@ -4,15 +4,19 @@ import {Property} from "../../../../models/Property";
 import {Post} from "../../../../models/Post";
 import {BaseService} from "../base/base.service";
 import {CommentPost} from "../../../../models/CommentPost";
+import {UserService} from "../userservice/user.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService extends BaseService<Post>{
 
-  constructor(private _http:HttpClient) {
+  userLoguedId!:number
+  constructor(private _http:HttpClient,
+              private _userService:UserService) {
     super(_http)
     this.resourceEndPoint='/api/v1/posts'
+    this.userLoguedId = this._userService.getIdUserLoged();
   }
 
   getPostsByAuthorId(id:number){
@@ -26,4 +30,5 @@ export class PostService extends BaseService<Post>{
   addComment(comment:CommentPost){
     return this._http.post(`${this.resourcePath()}/add-comment`, comment)
   }
+
 }

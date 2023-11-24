@@ -8,24 +8,26 @@
       <th>Name</th>
       <th>Lastname</th>
       <th>Gender</th>
+      <th>Name Property</th>
+      <th>Date</th>
+      <th>State</th>
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>John</td>
-      <td>Doe</td>
-      <td>Male</td>
+    <tr *ngFor="let client of clients">
+      <td>{{client.name}}</td>
+      <td>{{client.lastName}}</td>
+      <td>{{client.gender}}</td>
+      <td>{{client.property.name}}</td>
+      <td>{{client.createdAt}}</td>
+      <td>
+        <button
+          (click)="changeActive(client.property.id)"
+          *ngIf="client.isAsset"
+        >delete</button>
+      </td>
     </tr>
-    <tr>
-      <td>John</td>
-      <td>Doe</td>
-      <td>Male</td>
-    </tr>
-    <tr>
-      <td>John</td>
-      <td>Doe</td>
-      <td>Male</td>
-    </tr>
+
     </tbody>
   </table>
 </div>

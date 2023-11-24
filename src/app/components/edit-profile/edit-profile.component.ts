@@ -60,6 +60,7 @@ export class EditProfileComponent implements OnInit{
 
   updateUser(){
     if(this.formUser.valid){
+      this.user.id = this._userService.getIdUserLoged();
       this.user.name = this.formUser.get('name')?.value;
       this.user.lastName = this.formUser.get('lastName')?.value;
       this.user.gender = this.formUser.get('gender')?.value;
