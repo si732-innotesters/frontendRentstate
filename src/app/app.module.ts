@@ -34,6 +34,7 @@ import { SubscribeComponent } from './components/edit-profile/subscribe/subscrib
 import { YourPropertiesComponent } from './components/edit-profile/tables/your-properties/your-properties.component';
 import { YourPostsComponent } from './components/edit-profile/tables/your-posts/your-posts.component';
 import { ReservationsComponent } from './components/edit-profile/tables/reservations/reservations.component';
+import { YourClientsComponent } from './components/edit-profile/tables/your-clients/your-clients.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { ReservationsComponent } from './components/edit-profile/tables/reservat
     YourPropertiesComponent,
     YourPostsComponent,
     ReservationsComponent,
+    YourClientsComponent,
   ],
   imports: [
     BrowserModule,

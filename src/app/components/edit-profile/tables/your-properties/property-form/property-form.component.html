@@ -1,6 +1,6 @@
 
 <h1 class="title">{{editMode?'Edit':'Add'}} your property</h1>
-<form (ngSubmit)="addProperty()" [formGroup]="propertyForm">
+<form [formGroup]="propertyForm">
 
   <div class="form-body">
     <mat-form-field appearance="outline" class="form-field name">
@@ -54,12 +54,14 @@
     </mat-form-field>
   </div>
 <div style="display: flex;">
-  <button type="submit" class="button-save">
+  <button
+    (click)="addProperty()"
+          class="button-save">
     {{editMode?'Edit':'Add'}}
   </button>
   <button style="background: #DB6767"
           class="button-save"
-          (click)="cancelEdit.emit(false)"
+          (click)="onCancelEdit()"
   >Cancel
   </button>
 </div>

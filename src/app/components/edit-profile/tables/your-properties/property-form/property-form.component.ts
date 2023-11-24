@@ -13,6 +13,7 @@ import {Router} from "@angular/router";
 export class PropertyFormComponent implements OnInit, AfterViewInit{
     propertyForm: FormGroup;
 
+    @Input()isInProperties:boolean=false
     @Input()editMode:boolean = false
     @Input()property:Property
     @Output()editProperty = new EventEmitter<Property>()
@@ -65,21 +66,22 @@ export class PropertyFormComponent implements OnInit, AfterViewInit{
     ngOnInit() {
 
     }
-    propertyValuesFromForm() {
-        this.property = {
-            id: this.property.id ? this.property.id: 0,
-            authorId: this.property.authorId,
-            name: this.propertyForm.get('name')?.value,
-            description: this.propertyForm.get('description')?.value,
-            category: this.propertyForm.get('category')?.value,
-            urlImg: this.propertyForm.get('urlImg')?.value,
-            characteristics: this.propertyForm.get('characteristics')?.value,
-            location: this.propertyForm.get('location')?.value,
-            available: this.propertyForm.get('available')?.value,
-            reservedUsers: this.property.reservedUsers,
-            isPosted: this.property.isPosted,
-        };
-    }
+  propertyValuesFromForm() {
+    this.property = {
+      id: this.property && this.property.id ? this.property.id : 0,
+      authorId: this._userService.getIdUserLoged(),
+      name: this.propertyForm.get('name')?.value,
+      description: this.propertyForm.get('description')?.value,
+      category: this.propertyForm.get('category')?.value,
+      urlImg: this.propertyForm.get('urlImg')?.value,
+      characteristics: this.propertyForm.get('characteristics')?.value,
+      location: this.propertyForm.get('location')?.value,
+      available: this.propertyForm.get('available')?.value,
+      reservedUsers: [],
+      isPosted: false,
+    };
+  }
+
     addProperty() {
         if (this.propertyForm.valid) {
             this.propertyValuesFromForm()
@@ -88,7 +90,13 @@ export class PropertyFormComponent implements OnInit, AfterViewInit{
                 this.editProperty.emit(this.property);
             }else{
                 this._propertyService.create(this.property).subscribe(() => {
+                  if(this.isInProperties){
+                    this.isInProperties=false
+                    this.cancelEdit.emit(true)
+                  }else {
                     this._router.navigate(['/add-post']);
+                  }
+
                 });
             }
 
@@ -97,4 +105,13 @@ export class PropertyFormComponent implements OnInit, AfterViewInit{
         }
     }
 
+  onCancelEdit() {
+      if(this.isInProperties){
+        this.isInProperties=false
+        this.cancelEdit.emit(true)
+      }else {
+        window.history.back()
+      }
+
+  }
 }

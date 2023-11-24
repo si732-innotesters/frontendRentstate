@@ -40,7 +40,9 @@ export class ReservationsComponent implements OnInit{
 
   cancelReservation(propertyId: number, authorId: number) {
     this._propertyService.removeReservation(propertyId, authorId).subscribe(() => {
-      this.reservations = this.reservations.filter(reservation => reservation.author.id !== authorId);
+      this.reservations = this.reservations.filter(reservation =>
+        reservation.property.id !== propertyId || reservation.author.id !== authorId
+      );
     });
   }
 

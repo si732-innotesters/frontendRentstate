@@ -38,9 +38,6 @@ export class PublishPropertyComponent implements OnInit{
         this.properties = val;
         this.properties = this.properties.filter(property => !property.isPosted && property.available);
 
-        if (this.properties.length === 0) {
-          this._router.navigate(['/register-property']);
-        }
       },
     });
   }

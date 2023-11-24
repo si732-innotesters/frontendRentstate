@@ -2,6 +2,7 @@
 
   <section *ngIf="showForm">
     <app-property-form
+      [isInProperties]="true"
       [editMode]="edit"
       [property]="propertyToEdit"
       (cancelEdit)="cancelEdit($event)"
@@ -33,7 +34,7 @@
       </td>
       <td>{{ property.name }}</td>
       <td>{{ property.category }}</td>
-      <td class="editable" (click)="editAvailability(property)">
+      <td class="editable">
         <select [(ngModel)]="property.available">
           <option [ngValue]="true">Yes</option>
           <option [ngValue]="false">No</option>
