@@ -54,16 +54,18 @@ export class SeePostComponent implements OnInit{
   }
 
   changeReservation(propertyId:number){
-    if(this.reservedByUserLoged){
-      this._propertyService.removeReservation(propertyId,this._userService.getIdUserLoged()).subscribe(()=>{
-        alert("Your reservation was canceled")
-        this.reservedByUserLoged = false
-      })
-    }else{
-      this._propertyService.addReservation(propertyId,this._userService.getIdUserLoged()).subscribe(()=>{
-        alert("You reserved this property")
-        this.reservedByUserLoged = true
-      })
+    if(this.post.id != this._userService.userId) {
+      if (this.reservedByUserLoged) {
+        this._propertyService.removeReservation(propertyId, this._userService.userId).subscribe(() => {
+          alert("Your reservation was canceled")
+          this.reservedByUserLoged = false
+        })
+      } else {
+        this._propertyService.addReservation(propertyId, this._userService.userId).subscribe(() => {
+          alert("You reserved this property")
+          this.reservedByUserLoged = true
+        })
+      }
     }
   }
 
