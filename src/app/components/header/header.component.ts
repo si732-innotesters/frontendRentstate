@@ -25,6 +25,6 @@ export class HeaderComponent implements OnInit{
     return this._userService.isLoged();
   }
   goMyProfile(){
-    this._router.navigate([`/my-profile/${this._userService.getIdUserLoged()}`])
+    this._router.navigate([`/my-profile`])
   }
 }

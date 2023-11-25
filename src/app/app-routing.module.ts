@@ -30,7 +30,7 @@ const routes: Routes = [
   {path: 'register', component:RegisterComponent},
   {path: 'login', component:LoginComponent},
   {path: 'welcome', component:WelcomeComponent},
-  {path: 'my-profile/:id', component:EditProfileComponent},
+  {path: 'my-profile', component:EditProfileComponent},
   {path: 'see-profile/:id', component:SeeProfileComponent},
   {path: 'list-posts', component:ListPostsComponent},
   {path: 'see-post/:id', component:SeePostComponent},

@@ -30,10 +30,10 @@ export class UserService extends BaseService<User>{
 
 
   public register(registerModel:RegisterModel){
-    return this._http.post(`${environment.serverBasePath}/auth/register`,registerModel);
+    return this._http.post(`${environment.serverBasePath}/auth/api/register`,registerModel);
   }
   public login(credentials:any){
-    return this._http.post(`${environment.serverBasePath}/auth/login`,credentials);
+    return this._http.post(`${environment.serverBasePath}/auth/api/login`,credentials);
   }
 
   automaticLogin(data:any){
@@ -41,7 +41,7 @@ export class UserService extends BaseService<User>{
     window.sessionStorage.setItem("userId",data.userId)
   }
   getIdUserLoged(){
-    return Number(window.sessionStorage.getItem('userLogedId'));
+    return Number(window.sessionStorage.getItem('userId'));
   }
   getToken(){
     return String(window.sessionStorage.getItem('token'));

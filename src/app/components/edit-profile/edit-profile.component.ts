@@ -17,7 +17,7 @@ export class EditProfileComponent implements OnInit{
 
   genderOptions = ['Reserved','Male', 'Female', 'Other']
 
-  userId!:number
+  userId:number
   user!:User
   formUser:FormGroup
 
@@ -25,14 +25,10 @@ export class EditProfileComponent implements OnInit{
   updatePremium = false
 
   constructor(public _userService:UserService,
-              private _route:ActivatedRoute,
               private _router:Router,
               private _formBuild:FormBuilder) {
 
-    this._route.params.subscribe(params => {
-      this.userId = +params['id'];
-
-    })
+    this.userId = this._userService.userId
 
     this.formUser=this._formBuild.group({
       name: ['', Validators.required],
@@ -60,7 +56,7 @@ export class EditProfileComponent implements OnInit{
 
   updateUser(){
     if(this.formUser.valid){
-      this.user.id = this._userService.getIdUserLoged();
+      this.user.id = this.userId;
       this.user.name = this.formUser.get('name')?.value;
       this.user.lastName = this.formUser.get('lastName')?.value;
       this.user.gender = this.formUser.get('gender')?.value;
@@ -68,6 +64,7 @@ export class EditProfileComponent implements OnInit{
       this.user.age = this.formUser.get('age')?.value;
       this.user.photoUrl = this.formUser.get('photoUrl')?.value;
 
+      console.log(this.user)
       this._userService.update(this.user).subscribe(()=>{
         this._router.navigate(['/list-posts'])
       })

@@ -35,6 +35,7 @@ import { YourPropertiesComponent } from './components/edit-profile/tables/your-p
 import { YourPostsComponent } from './components/edit-profile/tables/your-posts/your-posts.component';
 import { ReservationsComponent } from './components/edit-profile/tables/reservations/reservations.component';
 import { YourClientsComponent } from './components/edit-profile/tables/your-clients/your-clients.component';
+import {JwtInterceptor} from "./public/shared/services/JwtInterceptor/JwtInterceptor";
 
 
 
@@ -80,7 +81,7 @@ import { YourClientsComponent } from './components/edit-profile/tables/your-clie
     FormsModule
   ],
   providers: [
-    //{provide:HTTP_INTERCEPTORS, useClass:JwtInterceptor,multi:true}
+    {provide:HTTP_INTERCEPTORS, useClass:JwtInterceptor,multi:true}
   ],
   bootstrap: [AppComponent]
 })

@@ -19,7 +19,7 @@ export class RegisterComponent {
     this.formRegister = this._formBuilder.group({
       name: ['', Validators.required],
       lastName: ['', Validators.required],
-      email: ['', [Validators.required,Validators.email]],
+      username: ['', [Validators.required,Validators.email]],
       password: ['', Validators.required],
     });
   }
@@ -27,7 +27,7 @@ export class RegisterComponent {
   addUser(){
 
     if(this.formRegister.valid){
-      this._userService.create(this.formRegister.value).subscribe((data:any)=>{
+      this._userService.register(this.formRegister.value).subscribe((data:any)=>{
         this._userService.automaticLogin(data)
         this._router.navigate(["/welcome"])
 
