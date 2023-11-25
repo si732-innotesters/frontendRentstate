@@ -30,7 +30,8 @@
     <tbody>
     <tr *ngFor="let property of properties">
       <td class="imgProperty">
-        <img [src]="property.urlImg" alt="Property Image">
+        <img [src]="property.urlImg" alt="Property Image"
+             style="width: 80px; height: 80px">
       </td>
       <td>{{ property.name }}</td>
       <td>{{ property.category }}</td>

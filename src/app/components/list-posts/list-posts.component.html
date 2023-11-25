@@ -1,14 +1,9 @@
-
 <section>
   <div class="container">
-    <a (click)="selectCategory('commercialSpace')"
-       [ngClass]="(category== 'commercialSpace')?'selected':''">Commercial Space</a>
-    <a (click)="selectCategory('room')"
-       [ngClass]="(category== 'room')?'selected':''">Rooms</a>
-    <a (click)="selectCategory('house')"
-       [ngClass]="(category== 'house')?'selected':''">Houses</a>
-    <a (click)="selectCategory('department')"
-       [ngClass]="(category== 'department')?'selected':''">Departments</a>
+    <a (click)="selectCategory('commercialSpace')" [ngClass]="(category == 'commercialSpace') ? 'selected' : ''">Commercial Space</a>
+    <a (click)="selectCategory('room')" [ngClass]="(category == 'room') ? 'selected' : ''">Rooms</a>
+    <a (click)="selectCategory('house')" [ngClass]="(category == 'house') ? 'selected' : ''">Houses</a>
+    <a (click)="selectCategory('department')" [ngClass]="(category == 'department') ? 'selected' : ''">Departments</a>
   </div>
 </section>
 
@@ -31,6 +26,3 @@
     </div>
   </ng-container>
 </div>
-
-
-

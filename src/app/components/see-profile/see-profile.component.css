@@ -81,6 +81,7 @@ span.selected {
   white-space: normal;
   padding: 5px 50px;
   text-align: justify;
+  min-height: 150px;
 }
 #send-message{
   grid-column: span 2;

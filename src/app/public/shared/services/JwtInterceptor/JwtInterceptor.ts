@@ -16,7 +16,7 @@ export class JwtInterceptor implements HttpInterceptor {
       return next.handle(req);
     }
 
-    if (token) {
+    if (0) {
       req = req.clone({
         setHeaders: {
           'Content-Type': 'application/json; charset=utf-8',

@@ -11,7 +11,7 @@ import {environment} from "../../../../envieonments/environment";
 export class UserService extends BaseService<User>{
 
   userId:number
-  token:string
+  token!:string
   constructor(private _http:HttpClient) {
     super(_http)
     this.resourceEndPoint = this.resourceEndPoint + '/users';
@@ -55,5 +55,7 @@ export class UserService extends BaseService<User>{
   }
   logOut(){
     window.sessionStorage.clear();
+    this.userId=0
+    this.token=""
   }
 }
