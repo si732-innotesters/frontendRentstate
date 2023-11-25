@@ -22,7 +22,7 @@ import { SeePostComponent } from './components/see-post/see-post.component';
 import { CommentsComponent} from "./components/see-post/comments/comments.component";
 import { SeeProfileComponent } from './components/see-profile/see-profile.component';
 import { ChatsComponent } from './components/see-messages/chats/chats.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { SeeMessagesComponent } from './components/see-messages/see-messages.component';
 import { PropertyFormComponent } from './components/edit-profile/tables/your-properties/property-form/property-form.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
@@ -35,6 +35,8 @@ import { YourPropertiesComponent } from './components/edit-profile/tables/your-p
 import { YourPostsComponent } from './components/edit-profile/tables/your-posts/your-posts.component';
 import { ReservationsComponent } from './components/edit-profile/tables/reservations/reservations.component';
 import { YourClientsComponent } from './components/edit-profile/tables/your-clients/your-clients.component';
+
+
 
 @NgModule({
   declarations: [
@@ -77,7 +79,9 @@ import { YourClientsComponent } from './components/edit-profile/tables/your-clie
     MatSelectModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    //{provide:HTTP_INTERCEPTORS, useClass:JwtInterceptor,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

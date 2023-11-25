@@ -3,7 +3,7 @@
   <img src="./assets/images/imgUserBlack.png" class="logo">
   <form [formGroup]="loginForm">
     <p class="login-text"><b>Login</b></p>
-    <input type="email" placeholder="Email" required formControlName="email">
+    <input type="email" placeholder="Email" required formControlName="username">
     <input type="password" placeholder="Password" required formControlName="password">
     <button type="submit" (click)="login()">Login</button>
   </form>

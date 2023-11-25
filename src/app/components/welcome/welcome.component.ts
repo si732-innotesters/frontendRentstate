@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../public/shared/services/userservice/user.service";
-import {User} from "../../models/User";
 
 @Component({
   selector: 'app-welcome',
@@ -15,10 +14,11 @@ export class WelcomeComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this._userService.getById(this._userService.getIdUserLoged())
+    this._userService.getById(1)
       .subscribe((data)=>{
         this.nameUser = data.name +' '+ data.lastName
         this.idUser = data.id
+        console.log("=====================")
     })
   }
 }

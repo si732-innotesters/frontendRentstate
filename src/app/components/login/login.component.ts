@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit{
               private _router:Router,
               ){
     this.loginForm = this._formBuilder.group({
-      email: ['', [Validators.required,Validators.email]],
+      username: ['', [Validators.required,Validators.email]],
       password: ['', Validators.required],
     });
 
@@ -28,11 +28,10 @@ export class LoginComponent implements OnInit{
 
   login(){
 
-    console.log(this.loginForm.value)
     if(this.loginForm.valid){
-      this._userService.login(this.loginForm.value).subscribe((data)=>{
-        this._userService.automaticLogin(data)
+      this._userService.login(this.loginForm.value).subscribe((data:any)=>{
 
+        this._userService.automaticLogin(data)
         this._router.navigate(['/welcome'])
       })
     }else {
